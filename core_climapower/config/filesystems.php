@@ -77,6 +77,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntoequipo' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntoequipo'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*

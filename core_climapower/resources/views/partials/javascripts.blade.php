@@ -129,5 +129,10 @@
     .catch(error => {
       console.error(error);
     });
+  ClassicEditor
+    .create(document.querySelector('#descripcion'))
+    .catch(error => {
+      console.error(error);
+    });
 </script>
 @yield('javascript')

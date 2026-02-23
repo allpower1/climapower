@@ -16,6 +16,7 @@ use App\Mail\ContactoWeb;
 use App\Models\AdminContactoOtros;
 use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
+use App\Models\NuestroEquipo;
 use App\Models\PreguntasFrecuentes;
 
 class SitioWebController extends Controller
@@ -33,8 +34,9 @@ class SitioWebController extends Controller
         $listpreguntasfrecuentes = PreguntasFrecuentes::where('estado',1)->get();
         $listnuestrasestrategias = NuestrasEstrategias::where('estado',1)->get();
         $listexperiencias = Experiencias::where('estado',1)->limit(6)->get();
+        $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo'));
     }
 
     public function listadoexperiencias()
@@ -57,6 +59,29 @@ class SitioWebController extends Controller
         }
 
         return view('site_detalle_experiencia', compact('experiencia'));
+    }
+
+    //nuestro equipo
+    public function listadoequipo()
+    {
+        $listequipo = NuestroEquipo::where('estado',1)->get();
+
+        return view('site_listado_equipo', compact('listequipo'));
+    }
+
+    public function detalleequipo($id)
+    {
+        $equipo = NuestroEquipo::where('id',$id)->first();
+
+        if($equipo->nombre_completo == '' || $equipo->nombre_completo == null){
+            return abort(404);
+        }
+
+        if($equipo->cargo == '' || $equipo->cargo == null){
+            return abort(404);
+        }
+
+        return view('site_detalle_equipo', compact('equipo'));
     }
 
     public function sobrenosotros()

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminExperienciasController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminNuestrasEstrategiasController;
+use App\Http\Controllers\AdminNuestroEquipoController;
 use App\Http\Controllers\AdminPreguntasFrecuentesController;
 use App\Http\Controllers\AdminSitioWebController;
 use App\Http\Controllers\PermissionsController;
@@ -112,6 +113,11 @@ Route::get('experiencia/{id}',[SitioWebController::class,'detalleexperiencia']);
 Route::get('experiencias',[SitioWebController::class,'listadoexperiencias']);
 Route::get('fileexperiencia/{path}', [FilesRespaldosController::class,'adjuntoexperiencia']);
 
+//nuestro equipo
+Route::get('equipo/{id}',[SitioWebController::class,'detalleequipo']);
+Route::get('nuestro_equipo',[SitioWebController::class,'listadoequipo']);
+Route::get('fileequipo/{path}', [FilesRespaldosController::class,'adjuntoequipo']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);
@@ -120,6 +126,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('preguntasfrecuentes',AdminPreguntasFrecuentesController::class);
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
     Route::resource('experiencias',AdminExperienciasController::class);
+    Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
     Route::get('usuarios_externos',[UsersController::class,'usuarios_externos']);
     Route::get('usuarios_externos/crear',[UsersController::class,'createUserExterno']);
     Route::post('usuarios_externos/guardar_registro',[UsersController::class,'storeUserExternos'])->name('auth.guardar_nuevo_usuario_externo');

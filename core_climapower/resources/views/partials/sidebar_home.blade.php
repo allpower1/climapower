@@ -97,7 +97,7 @@
                         <!--end:Menu sub-->
                     </div>
                     <!--end:Menu item plataforma web-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'experiencias')?'show':'' }}">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'experiencias' || $request->segment(2) == 'nuestroequipo')?'show':'' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
@@ -155,6 +155,22 @@
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">Experiencias</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                        </div>
+                        <!--end:Menu sub-->
+                        <!--begin:Menu sub experiencias-->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link {{ ($request->segment(1) == 'admin' and $request->segment(2) == 'nuestroequipo')?'active':'' }}" href="{{ url('admin/nuestroequipo') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Nuestro Equipo</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>

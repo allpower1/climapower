@@ -45,8 +45,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="#">
-                                                Team
+                                            <a class="nav-link {{ ($request->segment(1) == 'nuestro_equipo')?'active':'' }}" href="{{ url('nuestro_equipo') }}">
+                                                Nuestro Equipo
                                             </a>
                                         </li>
                                         <li>

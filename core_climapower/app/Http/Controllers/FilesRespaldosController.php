@@ -10,7 +10,7 @@ class FilesRespaldosController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['publicidad','avatares','adjuntomultimedia','adjuntoexperiencia']);
+        $this->middleware('auth')->except(['publicidad','avatares','adjuntomultimedia','adjuntoexperiencia','adjuntoequipo']);
     }
 
     public function adjuntoexperiencia(Request $request, $path)
@@ -18,6 +18,13 @@ class FilesRespaldosController extends Controller
         abort_if(!Storage::disk('adjuntoexperiencia')->exists($path),404,"El archivo no se encuentra en el disco.");
 
         return Storage::disk('adjuntoexperiencia')->response($path);
+    }
+
+    public function adjuntoequipo(Request $request, $path)
+    {
+        abort_if(!Storage::disk('adjuntoequipo')->exists($path),404,"El archivo no se encuentra en el disco.");
+
+        return Storage::disk('adjuntoequipo')->response($path);
     }
 
     public function adjuntomultimedia(Request $request, $path)
