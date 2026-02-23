@@ -1,0 +1,152 @@
+<?php
+
+use App\Http\Controllers\AdminExperienciasController;
+use App\Http\Controllers\AdminNewsletterController;
+use App\Http\Controllers\AdminNuestrasEstrategiasController;
+use App\Http\Controllers\AdminPreguntasFrecuentesController;
+use App\Http\Controllers\AdminSitioWebController;
+use App\Http\Controllers\PermissionsController;
+use App\Http\Controllers\RolesController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Auth\ChangePasswordController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\FilesRespaldosController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SitioWebController;
+use App\Http\Controllers\UpdateUserClienteController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', [SitioWebController::class, 'index']);
+
+//rutas admin
+Auth::routes();
+Route::get('loginadmin', [LoginController::class, 'showLoginForm']);
+Route::get('login', [LoginController::class, 'showLoginForm']);
+
+Route::get('sobrenosotros', [SitioWebController::class, 'sobrenosotros']);
+Route::get('terminosycondiciones', [SitioWebController::class, 'terminosycondiciones']);
+Route::get('politicas_privacidad', [SitioWebController::class, 'politicas_privacidad']);
+Route::get('pago_seguro', [SitioWebController::class, 'pago_seguro']);
+Route::get('garantia', [SitioWebController::class, 'garantia']);
+Route::get('contacto', [SitioWebController::class, 'contacto']);
+Route::post('enviar_contacto', [SitioWebController::class, 'procesarContacto']);
+Route::post('enviar_newsletter', [SitioWebController::class, 'procesarNewsLetter']);
+
+//verificacion de email
+Route::get('email/verify',[VerificationController::class,'show'])->name('verification.notice');
+Route::get('email/verify/{id}/{hash}',[VerificationController::class,'verify'])->name('verification.verify');
+Route::post('email/verification-notification',[VerificationController::class,'resend'])->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    //perfil publico
+    Route::patch('change_perfil_publicidad',[ChangePasswordController::class,'changePerfilPublicidad'])->name('auth.change_perfil_publicidad');
+    Route::get('eliminar_imagen_perfil_publicidad/{id_registro?}',[ChangePasswordController::class,'eliminarImagenPerfilPublicidad']);
+    Route::patch('change_perfil_publico',[ChangePasswordController::class,'changePerfilPublico'])->name('auth.change_perfil_publico');
+    Route::patch('change_horario_perfil_publico',[ChangePasswordController::class,'changeHorarioPerfilPublico'])->name('auth.change_horario_perfil_publico');
+
+    //chats internos
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+
+    // Crear nueva conversación
+    Route::get('/chat/nueva_conversacion', [ChatController::class, 'startConversationForm'])->name('chat.nueva_conversacion');
+    Route::post('/chat/start', [ChatController::class, 'startConversation'])->name('chat.start');
+
+    Route::get('/chat/{id}', [ChatController::class, 'show'])->name('chat.show');
+    Route::post('/chat/{id}/send', [ChatController::class, 'sendMessage'])->name('chat.send');
+});
+
+Route::middleware(['auth', 'unverified'])->group(function () {
+    Route::get('esperando-verificacion',[VerificationController::class,'show'])->name('verificar-pendiente');
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('avatares/{path}', [FilesRespaldosController::class,'avatares']);
+Route::get('publicidad/{path}', [FilesRespaldosController::class,'publicidad']);
+Route::get('adjuntomultimedia/{path}', [FilesRespaldosController::class,'adjuntomultimedia']);
+
+//Change Password Routes...
+Route::get('miperfil',[ChangePasswordController::class,'showChangePasswordForm']);
+Route::patch('miperfil',[ChangePasswordController::class,'changePassword'])->name('auth.miperfil');
+
+//Cambiar contraseña usuarios...
+Route::patch('restaurar_password',[UsersController::class,'restablecerPassword'])->name('auth.restaurar_password');
+
+//Cambiar estado de los usuarios
+Route::patch('restablecer_estado',[UsersController::class,'restablecerEstado'])->name('auth.restablecer_estado');
+Route::patch('gestionar_aprobacion_registro',[UsersController::class,'GestionarAprobacionRegistro'])->name('auth.gestionar_aprobacion_registro');
+
+//Change Datos Generales del Perfil Routes...
+Route::get('change_perfil',[ChangePasswordController::class,'showChangePasswordForm']);
+Route::patch('change_perfil',[ChangePasswordController::class,'changePerfil'])->name('auth.change_perfil');
+
+//Change Avatar Routes...
+Route::get('save_avatar',[ChangePasswordController::class,'showChangePasswordForm']);
+Route::patch('save_avatar',[ChangePasswordController::class,'saveAvatar'])->name('auth.save_avatar');
+
+//Restaurar Avatar Routes...
+Route::get('restaurar_avatar',[ChangePasswordController::class,'showChangePasswordForm']);
+Route::patch('restaurar_avatar',[ChangePasswordController::class,'RestaurarAvatar'])->name('auth.restaurar_avatar');
+
+//foto imagen carnet
+Route::patch('guardar_carnet_frontal',[ChangePasswordController::class,'guardarCarnetFrontal'])->name('auth.guardar_carnet_frontal');
+Route::patch('guardar_carnet_posterior',[ChangePasswordController::class,'guardarCarnetPosterior'])->name('auth.guardar_carnet_posterior');
+
+Route::post('actualizar_user_cliente',[UsersController::class,'updateUserCliente'])->name('admin.users.actualizar_user_cliente');
+
+//experiencias
+Route::get('experiencia/{id}',[SitioWebController::class,'detalleexperiencia']);
+Route::get('experiencias',[SitioWebController::class,'listadoexperiencias']);
+Route::get('fileexperiencia/{path}', [FilesRespaldosController::class,'adjuntoexperiencia']);
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
+    Route::get('home',[HomeController::class,'index']);
+    Route::resource('permissions',PermissionsController::class);
+    Route::resource('roles',RolesController::class);
+    Route::resource('users',UsersController::class);
+    Route::resource('preguntasfrecuentes',AdminPreguntasFrecuentesController::class);
+    Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
+    Route::resource('experiencias',AdminExperienciasController::class);
+    Route::get('usuarios_externos',[UsersController::class,'usuarios_externos']);
+    Route::get('usuarios_externos/crear',[UsersController::class,'createUserExterno']);
+    Route::post('usuarios_externos/guardar_registro',[UsersController::class,'storeUserExternos'])->name('auth.guardar_nuevo_usuario_externo');
+    Route::get('usuarios/listado/{tipousuarios}',[UsersController::class,'listado_usuarios']);
+    Route::get('users/editar_usuario/{id}',[UsersController::class,'editUserCliente']);
+    Route::get('users/ver_usuario/{id}',[UsersController::class,'visualizarUserCliente']);
+    Route::get('users/validar_email_users_cliente/{id}',[UsersController::class,'validarEmailUsersCliente']);
+    Route::get('users/eliminar_usuario/{id}/{tipousuarios}',[UsersController::class,'destroy']);
+
+    //admin contacto/otros
+    Route::get('admincontactootros',[AdminSitioWebController::class,'indexContactoOtros']);
+    Route::post('admincontactootros/actualizar',[AdminSitioWebController::class,'updateContactoOtros'])->name('admin.admincontactootros.update');
+
+    //admin sitio web
+    Route::get('adminsitioweb',[AdminSitioWebController::class,'index']);
+    Route::get('adminsitioweb/editar/{idadminsitioweb}',[AdminSitioWebController::class,'edit'])->name('admin.adminsitioweb.edit');
+    Route::post('adminsitioweb/actualizar',[AdminSitioWebController::class,'update'])->name('admin.adminsitioweb.update');
+
+    //admin newsletter
+    Route::get('newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter');
+    Route::get('listado_newsletter',[AdminNewsletterController::class,'listado_newsletter']);
+});
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'editcliente','as' => 'editcliente.'], function () {
+    Route::patch('UpdatePassword',[UpdateUserClienteController::class,'changePassword'])->name('UpdatePassword');
+    //foto imagen carnet
+    Route::patch('UpdatePersonalFotoPersonal',[UpdateUserClienteController::class,'guardarFotoPersonal'])->name('UpdatePersonalFotoPersonal');
+    Route::patch('UpdatePersonalCarnetFrontal',[UpdateUserClienteController::class,'guardarCarnetFrontal'])->name('UpdatePersonalCarnetFrontal');
+    Route::patch('UpdatePersonalCarnetPosterior',[UpdateUserClienteController::class,'guardarCarnetPosterior'])->name('UpdatePersonalCarnetPosterior');
+});

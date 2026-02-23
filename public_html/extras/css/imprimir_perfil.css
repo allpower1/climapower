@@ -1,0 +1,9 @@
+#header,#sub-header,#btn_imprimir,#ocultar_info{
+	display: none;
+}
+.box{
+	margin-top:95px;
+}
+.breadcrumb{
+	display: none;
+}

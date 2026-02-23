@@ -1,0 +1,31 @@
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #ef1d26;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.cookie-consent__message {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.cookie-consent__agree {
+    background-color: white;
+    color: #ef1d26;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cookie-consent__agree:hover {
+    background-color: #2ecc71;
+}

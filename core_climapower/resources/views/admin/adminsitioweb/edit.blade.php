@@ -1,0 +1,68 @@
+@extends('layouts.app')
+
+@section('contentHeader')
+<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">Editar Sección Sitio Web</h1>
+    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+        <li class="breadcrumb-item text-muted">
+            <a href="{{ url('/admin/home') }}" class="text-muted text-hover-primary">Inicio</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="bullet bg-gray-500 w-5px h-2px"></span>
+        </li>
+        <li class="breadcrumb-item text-muted">
+            <a href="{{ url('/admin/adminsitioweb') }}" class="text-muted text-hover-primary">Admin Sitio Web</a>
+        </li>
+        <li class="breadcrumb-item">
+            <span class="bullet bg-gray-500 w-5px h-2px"></span>
+        </li>
+        <li class="breadcrumb-item text-muted">Editar Sección Sitio Web</li>
+    </ul>
+</div>
+@endsection
+
+@section('content')
+    <form method="post" action="{{ url('admin/adminsitioweb/actualizar') }}">
+        @csrf
+        <input type="hidden" name="idregistro" value="{{ $adminsitioweb->id }}">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="titulo" class="col-sm-2 control-label">Titulo*</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="titulo" id="titulo" value="{{ $adminsitioweb->titulo }}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">Sub-Titulo</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="subtitulo" id="subtitulo" value="{{ $adminsitioweb->subtitulo }}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="datatxt" class="col-sm-2 control-label">Data Menú*</label>
+                            <div class="col-sm-10">
+                                <textarea name="datatxt" id="datatxt">{!! $adminsitioweb->datatxt !!}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group mb-0">
+                            <div style="text-align: right;">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
+                                    Guardar
+                                </button>
+                                <button type="button" class="btn btn-secondary waves-effect" onclick="javascript:window.location.reload();">Deshacer</button>
+                                <a href="{{ url('/admin/adminsitioweb') }}">
+                                    <button type="button" class="btn btn-secondary waves-effect">
+                                        Cancelar
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+@stop

@@ -1,0 +1,262 @@
+/* Changes for Typography */
+/* Socials */
+.footer_wrap .sc_layouts_row_type_normal .sc_socials.sc_socials_names:not(.alter) .socials_wrap .social_item {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Price */
+.sc_price_item .sc_price_item_title, .sc_price_item .sc_price_item_title a {
+  text-transform: var(--theme-font-h3_text-transform);
+}
+
+/* Calendar */
+.widget_calendar caption,
+.wp-block-calendar caption {
+  text-transform: uppercase;
+}
+
+/* Audio Title */
+.format-audio .post_featured .post_audio_title,
+.single-format-audio .post_featured .post_audio_title,
+.trx_addons_audio_player .audio_caption,
+.sc_layouts_blog_item_featured .post_featured .post_audio_title {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+/* Table */
+table th {
+  text-transform: uppercase;
+}
+
+/* Blockquote Cite */
+blockquote > cite, blockquote > p > cite,
+blockquote > .wp-block-pullquote__citation,
+.wp-block-quote .wp-block-quote__citation {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+/* Mobile Menu */
+.menu_mobile .menu_mobile_nav_area > ul > .menu-item > a {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+/* Mobile Widget Item */
+.menu_mobile .menu_mobile_widgets_area .widget_custom_html .extra_item a {
+  text-transform: var(--theme-font-h4_text-transform);
+  font-size: 1.647em;
+}
+
+/* Wooc */
+.trx_addons_woocommerce_search_type_filter .sc_form_field .sc_form_field_title_caption {
+  text-transform: uppercase;
+}
+
+.single_product_custom_text_style > p {
+  text-transform: uppercase;
+}
+
+.woocommerce div.product .woocommerce-accordion-content-additional_information th,
+.woocommerce-page div.product .woocommerce-accordion-content-additional_information th,
+.woocommerce table.shop_attributes th {
+  text-transform: uppercase;
+}
+
+.woocommerce #review_form #respond #reply-title {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta strong,
+.woocommerce-page #reviews #comments ol.commentlist li .comment-text p.meta strong {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+.woocommerce .comment-form .comment-form-comment label,
+.woocommerce .comment-form .comment-form-rating label,
+.woocommerce .comment-form .comment-form-author label,
+.woocommerce .comment-form .comment-form-email label {
+  text-transform: uppercase;
+}
+
+.woocommerce .product_meta span {
+  text-transform: uppercase;
+}
+.woocommerce .product_meta span > a,
+.woocommerce .product_meta span > span {
+  text-transform: none;
+}
+
+.woocommerce_status_bar {
+  text-transform: uppercase;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+  text-transform: uppercase;
+}
+
+.woocommerce div.product form.cart .group_table td label {
+  text-transform: uppercase;
+}
+
+/* Cart */
+.woocommerce ul.cart_list li > b,
+.woocommerce ul.cart_list li a,
+.woocommerce-page ul.cart_list li a,
+.woocommerce ul.product_list_widget li a,
+.woocommerce-page ul.product_list_widget li a {
+  text-transform: uppercase;
+}
+
+.woocommerce.widget_shopping_cart .total,
+.woocommerce-page.widget_shopping_cart .total,
+.woocommerce .widget_shopping_cart .total,
+.woocommerce-page .widget_shopping_cart .total {
+  text-transform: uppercase;
+}
+
+.woocommerce .woocommerce-cart-form table.shop_table .product-name-inner .product-info {
+  text-transform: uppercase;
+}
+
+/* Checkout */
+#payment ul.methods label,
+.woocommerce form .form-row label,
+.woocommerce-page form .form-row label {
+  text-transform: uppercase;
+}
+
+.shop_table_checkout_review table th,
+.shop_table_checkout_review table td {
+  text-transform: uppercase;
+}
+
+/* Wooc Checkout */
+.shop_table_order_details table.shop_table tr > th:first-child,
+.shop_table_order_details table.shop_table tr > td:first-child {
+  text-transform: uppercase;
+}
+
+/* Wishlist */
+.tinv-wishlist table th,
+.tinv-wishlist table td {
+  text-transform: uppercase;
+}
+
+/* Icons */
+.sc_icons_item_title {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+/* Adp popup */
+.adp-popup-type-content.adp-popup-open .sc_button.adp-popup-close {
+  position: unset;
+  color: var(--theme-color-inverse_link) !important;
+}
+.adp-popup-type-content.adp-popup-open .sc_button.adp-popup-close:before {
+  display: none;
+}
+
+/* Portfolio Extra */
+.sc_portfolio.sc_portfolio_extra .sc_portfolio_item .post_featured .post_info .post_title {
+  background-color: var(--theme-color-bg_color);
+}
+.sc_portfolio.sc_portfolio_extra .sc_portfolio_item .post_featured .post_info .post_title a {
+  color: var(--theme-color-text_dark) !important;
+}
+.sc_portfolio.sc_portfolio_extra .sc_portfolio_item .post_featured .post_info .post_meta .post_categories {
+  background-color: var(--theme-color-alter_bg_color);
+}
+.sc_portfolio.sc_portfolio_extra .sc_portfolio_item .post_featured .post_info .post_meta .post_categories a {
+  color: var(--theme-color-alter_text) !important;
+}
+
+/* Blogger Portfolio Grid Style 9 */
+.sc_blogger_lay_portfolio_grid.sc_blogger_lay_portfolio_grid_grid_style_9 .sc_blogger_item .sc_blogger_item_body .post_featured .post_info_bl .sc_blogger_item_title {
+  background-color: var(--theme-color-bg_color);
+}
+.sc_blogger_lay_portfolio_grid.sc_blogger_lay_portfolio_grid_grid_style_9 .sc_blogger_item .sc_blogger_item_body .post_featured .post_info_bl .sc_blogger_item_title a {
+  color: var(--theme-color-text_dark) !important;
+}
+.sc_blogger_lay_portfolio_grid.sc_blogger_lay_portfolio_grid_grid_style_9 .sc_blogger_item .sc_blogger_item_body .post_featured .post_info_bl .post_meta .post_categories {
+  background-color: var(--theme-color-alter_bg_color);
+}
+.sc_blogger_lay_portfolio_grid.sc_blogger_lay_portfolio_grid_grid_style_9 .sc_blogger_item .sc_blogger_item_body .post_featured .post_info_bl .post_meta .post_categories a {
+  color: var(--theme-color-alter_text) !important;
+}
+
+/* Controls */
+.sc_slider_controls.sc_slider_controls_default.slider_pagination_style_bullets .slider_pagination_bullet {
+  border-color: var(--theme-color-bd_color);
+}
+
+.sc_slider_controls.sc_slider_controls_default.slider_pagination_style_bullets .slider_pagination_bullet.slider_pagination_bullet_active,
+.sc_slider_controls.sc_slider_controls_default.slider_pagination_style_bullets .slider_pagination_bullet.swiper-pagination-button-active,
+.sc_slider_controls.sc_slider_controls_default.slider_pagination_style_bullets .slider_pagination_bullet:hover {
+  border-color: var(--theme-color-text_link);
+  background-color: var(--theme-color-text_link);
+}
+
+/* MC4WP Style 10 */
+[class*="scheme_"].footer_wrap #style-10.mc4wp-form .mc4wp-form-fields input[type="email"],
+.footer_wrap [class*="scheme_"].vc_row #style-10.mc4wp-form .mc4wp-form-fields input[type="email"] {
+  background-color: var(--theme-color-bg_color) !important;
+}
+
+/* Testimonials*/
+.sc_testimonials .sc_testimonials_item_author_data .sc_testimonials_item_author_title {
+  text-transform: var(--theme-font-h4_text-transform);
+}
+
+/* Testimonials Modern */
+.sc_testimonials_modern [class*="column"] .sc_testimonials_item_content strong,
+.sc_testimonials_modern .sc_testimonials_item_content strong {
+  text-transform: var(--theme-font-h4_text-transform);
+  font-weight: 500;
+}
+
+/* Testimonials Accent 2 */
+.sc_testimonials_accent2 .sc_testimonials_item:before {
+  content: '\EA21';
+  color: var(--theme-color-text_link);
+}
+.sc_testimonials_accent2 .sc_testimonials_item:hover :before {
+  color: var(--theme-color-text_dark);
+}
+
+/* Testimonials Decoration */
+.sc_testimonials_decoration .sc_testimonials_item_content:before {
+  content: '\EA21';
+  color: var(--theme-color-text_link);
+}
+
+/* Fooer Socials Modern */
+[class*="scheme_"].footer_wrap .sc_socials.sc_socials_default.modern .socials_wrap .social_item .social_icon,
+.footer_wrap [class*="scheme_"].vc_row .sc_socials.sc_socials_default.modern .socials_wrap .social_item .social_icon {
+  background-color: var(--theme-color-bg_color) !important;
+}
+
+/* 404 */
+.search-no-results .page_content_wrap,
+.error404 .page_content_wrap {
+  background-color: var(--theme-color-bg_color);
+}
+
+.post_item_404 .post_content .all-svg {
+  display: none;
+}
+.post_item_404 .page_title {
+  color: var(--theme-color-text_light);
+}
+
+@media (max-width: 1279px) {
+  footer .sc_title .sc_item_title_text br {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  footer .sc_title .sc_item_title_text br {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=extra-styles.css.map */

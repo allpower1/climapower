@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /loginadmin/
+Disallow: /registrarme/
+Disallow: /registro/
+Disallow: /user/
+Disallow: /perfil/editar/
+Disallow: /checkout/
+Disallow: /carrito/
+Disallow: /config/
+Disallow: /ajax/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+Disallow: /checkout/
+Disallow: /carrito/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /checkout/
+Disallow: /carrito/
+
+User-agent: Yandex
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.tuladovip.cl/sitemap.xml
