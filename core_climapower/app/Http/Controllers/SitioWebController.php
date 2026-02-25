@@ -50,6 +50,10 @@ class SitioWebController extends Controller
     {
         $experiencia = Experiencias::where('id',$id)->first();
 
+        if(!$experiencia){
+            return abort(404);
+        }
+
         if($experiencia->titulo == '' || $experiencia->titulo == null){
             return abort(404);
         }
@@ -72,6 +76,10 @@ class SitioWebController extends Controller
     public function detalleequipo($id)
     {
         $equipo = NuestroEquipo::where('id',$id)->first();
+
+        if(!$equipo){
+            return abort(404);
+        }
 
         if($equipo->nombre_completo == '' || $equipo->nombre_completo == null){
             return abort(404);
