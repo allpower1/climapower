@@ -134,5 +134,20 @@
     .catch(error => {
       console.error(error);
     });
+  ClassicEditor
+    .create(document.querySelector('#texto_primera_parte'))
+    .catch(error => {
+      console.error(error);
+    });
+  ClassicEditor
+    .create(document.querySelector('#texto_segunda_parte'))
+    .catch(error => {
+      console.error(error);
+    });
+  ClassicEditor
+    .create(document.querySelector('#texto_tercera_parte'))
+    .catch(error => {
+      console.error(error);
+    });
 </script>
 @yield('javascript')

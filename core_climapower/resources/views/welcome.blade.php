@@ -67,30 +67,19 @@
 	</div>
 </section>
 
+<!-- seccion acerca nosotros -->
 <section class="about-us custom-section-padding" id="about-us">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-lg-6">
-				<h2 class="font-weight-bold text-color-dark">- About Us</h2>
-				<p class="ps-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper risus luctus. Nunc et feugiat arcu, in placerat risus. Phasellus condimentum sapien vitae.</p>
+				<h2 class="font-weight-bold text-color-dark">- Acerca Nosotoros</h2>
 				<div class="ps-4">
 					<div class="row">
-						<div class="col-lg-6">
-							<ul class="list list-icons list-icons-style-3 list-tertiary">
-								<li><i class="fas fa-chevron-right"></i> Certified Professionals</li>
-								<li><i class="fas fa-chevron-right"></i> Former Chief Executives</li>
-								<li><i class="fas fa-chevron-right"></i> Real Estate Professionals</li>
-							</ul>
-						</div>
-						<div class="col-lg-6">
-							<ul class="list list-icons list-icons-style-3 list-tertiary">
-								<li><i class="fas fa-chevron-right"></i> Nobel Laureate Economists</li>
-								<li><i class="fas fa-chevron-right"></i> Former Political Leaders</li>
-								<li><i class="fas fa-chevron-right"></i> Chartered Financial Analysts</li>
-							</ul>
+						<div class="col-lg-12">
+							<p class="ps-4">{!! $dataacercanosotros->texto_primera_parte !!}</p>
 						</div>
 					</div>
-					<a class="btn btn-outline custom-border-width btn-primary mt-3 mb-2 custom-border-radius font-weight-semibold text-uppercase" href="#">Read More</a>
+					<a class="btn btn-outline custom-border-width btn-primary mt-3 mb-2 custom-border-radius font-weight-semibold text-uppercase" href="{{ url('acerca_nosotros') }}">Leer Más</a>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6 position-relative">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAcercaNosotrosController;
 use App\Http\Controllers\AdminExperienciasController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminNuestrasEstrategiasController;
@@ -118,6 +119,10 @@ Route::get('equipo/{id}',[SitioWebController::class,'detalleequipo']);
 Route::get('nuestro_equipo',[SitioWebController::class,'listadoequipo']);
 Route::get('fileequipo/{path}', [FilesRespaldosController::class,'adjuntoequipo']);
 
+//acerca nosotros
+Route::get('acerca_nosotros',[SitioWebController::class,'sobrenosotros']);
+Route::get('fileacercanosotros/{path}', [FilesRespaldosController::class,'adjuntoacercanosotros']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);
@@ -127,6 +132,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
     Route::resource('experiencias',AdminExperienciasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
+    Route::resource('acercanosotros',AdminAcercaNosotrosController::class);
     Route::get('usuarios_externos',[UsersController::class,'usuarios_externos']);
     Route::get('usuarios_externos/crear',[UsersController::class,'createUserExterno']);
     Route::post('usuarios_externos/guardar_registro',[UsersController::class,'storeUserExternos'])->name('auth.guardar_nuevo_usuario_externo');

@@ -25,7 +25,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="#">
+                                            <a class="nav-link {{ ($request->segment(1) == 'acerca_nosotros')?'active':'' }}" href="{{ url('acerca_nosotros') }}">
                                                 Acerca Nosotros
                                             </a>
                                         </li>

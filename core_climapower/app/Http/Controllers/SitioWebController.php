@@ -13,6 +13,7 @@ use App\Mail\NewsLetterWeb;
 use App\Models\NewsletterWeb as ModelsNewsletterWeb;
 use Rahul900day\Captcha\Facades\Captcha;
 use App\Mail\ContactoWeb;
+use App\Models\AdminAcercaNosotros;
 use App\Models\AdminContactoOtros;
 use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
@@ -35,8 +36,9 @@ class SitioWebController extends Controller
         $listnuestrasestrategias = NuestrasEstrategias::where('estado',1)->get();
         $listexperiencias = Experiencias::where('estado',1)->limit(6)->get();
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
+        $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros'));
     }
 
     public function listadoexperiencias()
@@ -94,13 +96,14 @@ class SitioWebController extends Controller
 
     public function sobrenosotros()
     {
-        $datasitio = AdminFooter::where('id',1)->first();
+        $datasitio = AdminContactoOtros::where('id',1)->first();
+        $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
 
-        if($datasitio->titulo == '' || $datasitio->titulo == null){
+        if(!$dataacercanosotros){
             return abort(404);
         }
 
-        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+        return view('site_acerca_nosotros', compact('datasitio','dataacercanosotros'));
     }
 
     public function terminosycondiciones()
