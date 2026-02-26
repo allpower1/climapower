@@ -13,6 +13,7 @@ use App\Mail\NewsLetterWeb;
 use App\Models\NewsletterWeb as ModelsNewsletterWeb;
 use Rahul900day\Captcha\Facades\Captcha;
 use App\Mail\ContactoWeb;
+use App\Mail\TestimonioWeb;
 use App\Models\AdminAcercaNosotros;
 use App\Models\AdminContactoOtros;
 use App\Models\Experiencias;
@@ -20,6 +21,8 @@ use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
 use App\Models\PreguntasFrecuentes;
 use App\Models\SliderHome;
+use App\Models\Testimonios;
+use Intervention\Image\ImageManager;
 
 class SitioWebController extends Controller
 {
@@ -39,6 +42,7 @@ class SitioWebController extends Controller
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
         $sliderhome = SliderHome::where('estado',1)->get();
+        $listtestimonios = Testimonios::where('estado',1)->get();
 
         //validar si existe data basica
         if(!$datasitio){
@@ -53,7 +57,7 @@ class SitioWebController extends Controller
             }
         }
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter','listtestimonios'));
     }
 
     public function listadoexperiencias()
@@ -119,6 +123,13 @@ class SitioWebController extends Controller
         }
 
         return view('site_acerca_nosotros', compact('datasitio','dataacercanosotros'));
+    }
+
+    public function testimonios()
+    {
+        $listtestimonios = Testimonios::where('estado',1)->get();
+
+        return view('site_testimonios', compact('listtestimonios'));
     }
 
     public function terminosycondiciones()
@@ -261,6 +272,78 @@ class SitioWebController extends Controller
             Log::info(print_r($th->getMessage(),true));
             return redirect()->back()->with('errorEnvioNewsletter',$th->getMessage());
         }
+    }
+    public function procesarNuevoTestimonio(Request $request)
+    {
+        try {
+            $reglas = array(
+                'nombre' => 'required|string|max:191',
+                'email' => 'email|required',
+                'cargo' => 'nullable|string|max:100',
+                'testimonio' => 'required',
+                'imagen' => 'nullable|file|max:10240|mimes:jpg,jpeg,png',
+                Captcha::getResponseName() => ['required', 'captcha'],
+            );
+
+            $validator = Validator::make($request->all(), $reglas);
+
+            if($validator->fails())
+            {
+                $errors = $validator->errors();
+                return redirect()->back()->with('errortestimonio',$errors->first());
+            }else{
+                //guardar nuevo testimonio
+                $testimonio = new Testimonios();
+                $testimonio->nombre = $request->get('nombre');
+                $testimonio->email = $request->get('email');
+                $testimonio->cargo = $request->get('cargo');
+                $testimonio->testimonio = $request->get('testimonio');
+                $testimonio->estado = 0;
+
+                if ($request->hasFile('imagen')) {
+                    $ruta = storage_path().'/respaldos/adjuntotestimonio/';
+
+                    $file = $request->file('imagen');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = date('Y').'_testimonio_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
+
+                    $manager = new ImageManager(['driver' => 'gd']);
+                    $image = $manager->make($file);
+                    $image->fit(234, 225);
+                    $image->save($ruta.$filename);
+
+                    $testimonio->imagen = $filename;
+                }
+
+                $testimonio->save();
+
+                //enviar email de aviso del testimonio
+                $objDemo = new \stdClass();
+                $objDemo->nombre = $request->get('nombre');
+                $objDemo->email = $request->get('email');
+                $objDemo->cargo = $request->get('cargo');
+                $objDemo->testimonio = $request->get('testimonio');
+
+                Mail::to($request->get('email'))->cc('contacto@climapower.cl')->send(new TestimonioWeb($objDemo));
+
+                return redirect()->back()->with('successenviotestimonio','Tu testimonio fue ingresado exitosamente, revisaremos tu testimonio a la brevedad!');
+            }
+        } catch (\Throwable $th) {
+            Log::info(print_r($th->getMessage(),true));
+            return redirect()->back()->with('errortestimonio',$th->getMessage());
+        }
+    }
+
+    protected function random_string()
+    {
+        $key = '';
+        $keys = array_merge(range('a', 'z'), range(0, 9));
+
+        for ($i = 0; $i < 10; $i++) {
+            $key .= $keys[array_rand($keys)];
+        }
+
+        return $key;
     }
 
 }

@@ -101,6 +101,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntotestimonio' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntotestimonio'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*

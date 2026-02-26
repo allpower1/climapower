@@ -13,7 +13,7 @@
         "giggsey/libphonenumber-for-php": "^9.0",
         "guzzlehttp/guzzle": "^7.9",
         "haneul-chile/flow": "^0.1.0",
-        "intervention/image": "^3.5",
+        "intervention/image": "^2.7",
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",

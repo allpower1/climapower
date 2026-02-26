@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminNuestroEquipoController;
 use App\Http\Controllers\AdminPreguntasFrecuentesController;
 use App\Http\Controllers\AdminSitioWebController;
 use App\Http\Controllers\AdminSliderHomeController;
+use App\Http\Controllers\AdminTestimoniosController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
@@ -47,6 +48,7 @@ Route::get('garantia', [SitioWebController::class, 'garantia']);
 Route::get('contacto', [SitioWebController::class, 'contacto']);
 Route::post('enviar_contacto', [SitioWebController::class, 'procesarContacto']);
 Route::post('enviar_newsletter', [SitioWebController::class, 'procesarNewsLetter']);
+Route::post('enviar_testimonio', [SitioWebController::class, 'procesarNuevoTestimonio']);
 
 //verificacion de email
 Route::get('email/verify',[VerificationController::class,'show'])->name('verification.notice');
@@ -130,6 +132,10 @@ Route::get('filefondofooter/{path}', [FilesRespaldosController::class,'adjuntofo
 //slider home
 Route::get('filesliderhome/{path}', [FilesRespaldosController::class,'adjuntosliderhome']);
 
+//testimonio
+Route::get('testimonios',[SitioWebController::class,'testimonios']);
+Route::get('filetestimonio/{path}', [FilesRespaldosController::class,'adjuntotestimonio']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);
@@ -162,6 +168,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     //admin newsletter
     Route::get('newsletter', [AdminNewsletterController::class, 'index'])->name('admin.newsletter');
     Route::get('listado_newsletter',[AdminNewsletterController::class,'listado_newsletter']);
+
+    //admin testimonios
+    Route::get('testimonios', [AdminTestimoniosController::class, 'index']);
+    Route::get('testimonio/editar/{idtestimonio}',[AdminTestimoniosController::class,'edit']);
+    Route::post('testimonio/actualizar/{idtestimonio}',[AdminTestimoniosController::class,'update']);
+    Route::get('testimonio/eliminar/{idtestimonio}',[AdminTestimoniosController::class,'destroy'])->name('admin.testimonios.destroy');
 });
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'editcliente','as' => 'editcliente.'], function () {

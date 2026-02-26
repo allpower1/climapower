@@ -394,47 +394,61 @@
 	</div>
 </section>
 
+<!-- seccion testimonios -->
 <section class="custom-section-padding">
 	<div class="container">
 		<div class="row">
 			<div class="col">
-				<h2 class="font-weight-bold text-color-dark">- Testimonials</h2>
+				<h2 class="font-weight-bold text-color-dark">- Testimonios</h2>
+
+				@if (session('successenviotestimonio'))
+					<div class="contact-form-success alert alert-success mt-4">
+						<strong>Exito!</strong> {{ session('successenviotestimonio') }}.
+					</div>
+				@endif
+
+				@if (Session::has('errortestimonio'))
+					<div class="contact-form-error alert alert-danger mt-4">
+						{{ Session::get('errortestimonio') }}
+					</div>
+				@endif
+
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<div class="owl-carousel show-nav-title custom-dots-style-1 custom-dots-position custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 1, 'autoHeight': true, 'loop': false, 'nav': false, 'dots': true}">
-					<div class="row">
-						<div class="col-8 col-sm-4 col-lg-2 text-center pt-5">
-							<img src="{{ url('img/demos/business-consulting/testimonials/testimonial-author-2.jpg') }}" alt class="img-fluid custom-rounded-image" />
-						</div>
-						<div class="col-12 col-sm-12 col-lg-10">
-							<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
-								<blockquote class="pb-2">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex. Aliquam et tortor nisi. Duis mollis diam nec elit volutpat suscipit.</p>
-								</blockquote>
-								<div class="testimonial-author float-start">
-									<p><strong>John Smith</strong><span class="text-color-primary">CEO &amp; Founder - Okler</span></p>
+					@if($listtestimonios)
+						@forelse ($listtestimonios as $indextestimonio => $testimonio)
+							<div class="row">
+								<div class="col-8 col-sm-4 col-lg-2 text-center pt-5">
+									@if($testimonio->imagen)
+										<img src="{{ url('filetestimonio/'.$testimonio->imagen) }}" alt class="img-fluid custom-rounded-image"/>
+									@else
+										<img src="{{ url('img/demos/business-consulting/testimonials/testimonial-author-2.jpg') }}" alt class="img-fluid custom-rounded-image" />
+									@endif
+								</div>
+								<div class="col-12 col-sm-12 col-lg-10">
+									<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
+										<blockquote class="pb-2">
+											<p>{{ $testimonio->testimonio }}.</p>
+										</blockquote>
+										<div class="testimonial-author float-start">
+											<p><strong>{{ $testimonio->nombre }}</strong><span class="text-color-primary">{{ $testimonio->cargo }}</span></p>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-8 col-sm-4 col-lg-2 text-center pt-5">
-							<img src="{{ url('img/demos/business-consulting/testimonials/testimonial-author-3.jpg') }}" alt class="img-fluid custom-rounded-image" />
-						</div>
-						<div class="col-12 col-sm-12 col-lg-10">
-							<div class="testimonial custom-testimonial-style-1 testimonial-with-quotes mb-0">
-								<blockquote class="pb-2">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce ante tellus, convallis non consectetur sed, pharetra nec ex. Aliquam et tortor nisi. Duis mollis diam nec elit volutpat suscipit.</p>
-								</blockquote>
-								<div class="testimonial-author float-start">
-									<p><strong>John Smith</strong><span class="text-color-primary">CEO &amp; Founder - Okler</span></p>
-								</div>
-							</div>
-						</div>
-					</div>
+						@empty
+							<p>No existen registros de testimonios.</p>
+						@endforelse
+					@endif
 				</div>
+			</div>
+		</div>
+		<div class="row text-center mt-5">
+			<div class="col">
+				<button type="button" class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase" data-bs-toggle="modal" data-bs-target="#modalIngresarTestimonio">Ingresar tu testimonio</button>
 			</div>
 		</div>
 	</div>
@@ -633,6 +647,73 @@
 		</div>
 	</div>
 </section>
+
+<!-- modal ingresar testimonio -->
+<div class="modal fade" id="modalIngresarTestimonio" tabindex="-1" aria-labelledby="modalIngresarTestimonioLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalIngresarTestimonioLabel">Ingresa tu testimonio</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+			</div>
+			<form class="custom-contact-form-style-1" action="{{ url('enviar_testimonio') }}" method="POST" enctype="multipart/form-data">
+				@csrf
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col">
+							<div class="custom-input-box">
+								<i class="icon-user icons text-color-primary"></i>
+								<input type="text" placeholder="Nombre*" value="{{ old('nombre') }}" data-msg-required="Por favor ingresa tu nombre." maxlength="191" class="form-control" name="nombre" required>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<div class="custom-input-box">
+								<i class="icon-envelope icons text-color-primary"></i>
+								<input type="email" placeholder="Correo electrónico* (no será publicado en el sitio web)" value="{{ old('email') }}" data-msg-required="Por favor ingresa tu correo electrónico." data-msg-email="Por favor ingresa un email válido." maxlength="100" class="form-control" name="email" required>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<div class="custom-input-box">
+								<i class="icon-user icons text-color-primary"></i>
+								<input type="text" placeholder="Cargo" value="{{ old('cargo') }}" data-msg-required="Por favor ingresa tu cargo." maxlength="100" class="form-control" name="cargo">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<div class="custom-input-box">
+								<i class="icon-user icons text-color-primary"></i>
+								<input type="file" placeholder="Imagen" value="{{ old('imagen') }}" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg" data-msg-required="Por favor ingresa tu imagen." class="form-control" name="imagen">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<div class="custom-input-box">
+								<i class="icon-bubble icons text-color-primary"></i>
+								<textarea maxlength="5000" data-msg-required="Por favor ingresa tu testimonio." rows="10" class="form-control" name="testimonio" placeholder="Testimonio*" required>{{ old('testimonio') }}</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-12" style="text-align: center;">
+							<x-captcha-container />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					<button type="submit" class="btn btn-primary">Enviar Testimonio</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 @endsection
 @section('javascript')
 <x-captcha-js />
