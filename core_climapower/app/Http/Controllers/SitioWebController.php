@@ -19,6 +19,7 @@ use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
 use App\Models\PreguntasFrecuentes;
+use App\Models\SliderHome;
 
 class SitioWebController extends Controller
 {
@@ -37,6 +38,7 @@ class SitioWebController extends Controller
         $listexperiencias = Experiencias::where('estado',1)->limit(6)->get();
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
+        $sliderhome = SliderHome::where('estado',1)->get();
 
         //validar si existe data basica
         if(!$datasitio){
@@ -51,7 +53,7 @@ class SitioWebController extends Controller
             }
         }
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','fondofooter'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter'));
     }
 
     public function listadoexperiencias()

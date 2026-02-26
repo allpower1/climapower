@@ -1,45 +1,42 @@
 @extends('layouts.appsitioweb')
 
 @section('content')
-<div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover show-dots-xs show-dots-sm show-dots-md dots-light custom-nav-arrows-1 nav-dark nav-md nav-font-size-md show-nav-hover mb-0" data-plugin-options="{'autoplayTimeout': 9000}" style="height: 100vh;">
+<!-- seccion slider home -->
+@if(!$sliderhome->isEmpty())
+<div class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover show-dots-xs show-dots-sm show-dots-md dots-light custom-nav-arrows-1 nav-dark nav-md nav-font-size-md show-nav-hover mb-0" @if(count($sliderhome) > 1) data-plugin-options="{'autoplayTimeout': 9000, 'loop': true}" @else data-plugin-options="{'loop': false, 'autoplay': false, 'nav': false, 'dots': false}" @endif style="height: 100vh;">
 	<div class="owl-stage-outer">
 		<div class="owl-stage">
 
 			<!-- Carousel Slide 1 -->
-			<div class="owl-item position-relative pt-5" style="background-image: url(img/demos/business-consulting/slides/slide-1.jpg); background-size: cover; background-position: center;">
+			@foreach($sliderhome as $slider)
+			<div class="owl-item position-relative pt-5" style="background-image: url({{ url('filesliderhome/'.$slider->imagen) }}); background-size: cover; background-position: center;">
 				<div class="container position-relative z-index-3 pb-5 h-100">
 					<div class="row align-items-center pb-5 h-100">
 						<div class="col">
-							<h1 class="custom-secondary-font text-color-light font-weight-extra-bold text-8 line-height-1 line-height-sm-3 mb-5 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">Get your<br><span class="custom-secondary-font text-4-5">Free Consultation</span></h1>
-							<a href="#" class="btn btn-primary btn-modern font-weight-bold text-2 py-3 btn-px-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">GET STARTED</a>
+							<h1 class="custom-secondary-font text-color-light font-weight-extra-bold text-8 line-height-1 line-height-sm-3 mb-5 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">{{ $slider->titulo_parte_1 }}<br><span class="custom-secondary-font text-4-5">{{ $slider->titulo_parte_2 }}</span></h1>
+							@if($slider->texto_boton && $slider->url_boton)
+							<a href="{{ $slider->url_boton }}" class="btn btn-primary btn-modern font-weight-bold text-2 py-3 btn-px-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">{{ $slider->texto_boton }}</a>
+							@endif
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<!-- Carousel Slide 2 -->
-			<div class="owl-item position-relative pt-5" style="background-image: url(img/demos/business-consulting/slides/slide-2.jpg); background-size: cover; background-position: center;">
-				<div class="container position-relative z-index-3 pb-5 h-100">
-					<div class="row align-items-center pb-5 h-100">
-						<div class="col">
-							<h1 class="custom-secondary-font text-color-light font-weight-extra-bold text-8 line-height-1 line-height-sm-3 mb-5 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">Solutions for<br><span class="custom-secondary-font text-4-5">Pro Business Plan</span></h1>
-							<a href="#" class="btn btn-primary btn-modern font-weight-bold text-2 py-3 btn-px-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">GET STARTED</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			@endforeach
 
 		</div>
 	</div>
+	 @if(count($sliderhome) > 1)
 	<div class="owl-nav">
 		<button type="button" role="presentation" class="owl-prev" aria-label="Previous"></button>
 		<button type="button" role="presentation" class="owl-next" aria-label="Next"></button>
 	</div>
+	@endif
 </div>
+@endif
 
 <!-- seccion precontacto -->
-<section class="looking-for custom-position-1 custom-md-border-top z-index-1">
-	<div class="container">
+<section class="looking-for custom-md-border-top @if($sliderhome->isEmpty()) custom-position-2 @endif @if(!$sliderhome->isEmpty()) custom-position-1 z-index-1 @endif">
+	<div class="container" style="@if($sliderhome->isEmpty()) margin-top: 75px; @endif">
 		<div class="row align-items-center">
 			<div class="col-md-6 col-lg-7">
 				<div class="looking-for-box">

@@ -95,6 +95,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntosliderhome' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntosliderhome'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*

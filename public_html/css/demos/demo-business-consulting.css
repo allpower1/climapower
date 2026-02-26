@@ -77,6 +77,12 @@ h2 {
 		}
 }
 
+.custom-position-2 {
+		position: relative;
+		margin-top: 0px;
+		background: #101019;
+}
+
 .custom-color-red {
 		color: #fa4141;
 }

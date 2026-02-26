@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminNuestrasEstrategiasController;
 use App\Http\Controllers\AdminNuestroEquipoController;
 use App\Http\Controllers\AdminPreguntasFrecuentesController;
 use App\Http\Controllers\AdminSitioWebController;
+use App\Http\Controllers\AdminSliderHomeController;
 use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
@@ -126,6 +127,9 @@ Route::get('fileacercanosotros/{path}', [FilesRespaldosController::class,'adjunt
 //footer
 Route::get('filefondofooter/{path}', [FilesRespaldosController::class,'adjuntofondofooter']);
 
+//slider home
+Route::get('filesliderhome/{path}', [FilesRespaldosController::class,'adjuntosliderhome']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);
@@ -136,6 +140,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('experiencias',AdminExperienciasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
     Route::resource('acercanosotros',AdminAcercaNosotrosController::class);
+    Route::resource('sliderhome',AdminSliderHomeController::class);
     Route::get('usuarios_externos',[UsersController::class,'usuarios_externos']);
     Route::get('usuarios_externos/crear',[UsersController::class,'createUserExterno']);
     Route::post('usuarios_externos/guardar_registro',[UsersController::class,'storeUserExternos'])->name('auth.guardar_nuevo_usuario_externo');
