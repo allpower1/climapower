@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="adjuntoexperiencia" class="col-sm-2 control-label">Imagen*</label>
+                            <label for="adjuntoexperiencia" class="col-sm-2 control-label">Imagen (111x106)*</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" name="adjuntoexperiencia" id="adjuntoexperiencia" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg">
                                 <p class="help-block"></p>

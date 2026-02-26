@@ -31,7 +31,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="adjuntoequipo" class="col-sm-2 control-label">Imagen*</label>
+                            <label for="adjuntoequipo" class="col-sm-2 control-label">Imagen (600x600)*</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" name="adjuntoequipo" id="adjuntoequipo" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg" required>
                                 <p class="help-block"></p>
