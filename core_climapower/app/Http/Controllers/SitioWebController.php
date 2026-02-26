@@ -38,6 +38,11 @@ class SitioWebController extends Controller
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
 
+        //validar si existe data basica
+        if(!$datasitio){
+            return abort(404);
+        }
+
         //procesar fonodo footer
         $fondofooter = 'img/demos/business-consulting/contact/contact-background.jpg';
         if($datasitio){
