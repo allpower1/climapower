@@ -591,22 +591,17 @@
 			</div>
 			<div class="col-lg-6 custom-sm-margin-top">
 				<h2 class="font-weight-bold">- Escribenos</h2>
-				<form class="contact-form custom-contact-form-style-1 form-errors-light" action="php/contact-form.php" method="POST">
-					<div class="contact-form-success alert alert-success d-none mt-4">
-						<strong>Success!</strong> Your message has been sent to us.
-					</div>
+				<form class="custom-contact-form-style-1" action="{{ url('enviar_contacto') }}" method="POST">
+					@csrf
 
-					<div class="contact-form-error alert alert-danger d-none mt-4">
-						<strong>Error!</strong> There was an error sending your message.
-						<span class="mail-error-message text-1 d-block"></span>
-					</div>
+					@include('partials.alerts')
 
 					<input type="hidden" name="subject" value="Contact Message Received" />
 					<div class="row">
 						<div class="form-group col">
 							<div class="custom-input-box">
 								<i class="icon-user icons text-color-primary"></i>
-								<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" placeholder="Nombre*" required>
+								<input type="text" value="{{ old('nombre_completo') }}" data-msg-required="Por favor ingresa tu nombre." maxlength="100" class="form-control" name="nombre_completo" placeholder="Nombre*" required>
 							</div>
 						</div>
 					</div>
@@ -614,7 +609,7 @@
 						<div class="form-group col">
 							<div class="custom-input-box">
 								<i class="icon-envelope icons text-color-primary"></i>
-								<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" placeholder="Email*" required>
+								<input type="email" value="{{ old('email') }}" data-msg-required="Por favor ingresa tu email." data-msg-email="Por favor ingresa un email válido." maxlength="100" class="form-control" name="email" placeholder="Email*" required>
 							</div>
 						</div>
 					</div>
@@ -622,7 +617,7 @@
 						<div class="form-group col">
 							<div class="custom-input-box">
 								<i class="icon-bubble icons text-color-primary"></i>
-								<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" placeholder="Mensaje*" required></textarea>
+								<textarea maxlength="5000" data-msg-required="Por favor ingresa tu mensaje." rows="10" class="form-control" name="mensaje" placeholder="Mensaje*" required>{{ old('mensaje') }}</textarea>
 							</div>
 						</div>
 					</div>

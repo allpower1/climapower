@@ -40,7 +40,7 @@
 					<div class="form-group col">
 						<div class="custom-input-box">
 							<i class="icon-envelope icons text-color-primary"></i>
-							<input type="email" placeholder="Correo electrónico*" value="{{ old('email') }}" data-msg-required="Por favor ingresa tu correo electrónico." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" required>
+							<input type="email" placeholder="Correo electrónico*" value="{{ old('email') }}" data-msg-required="Por favor ingresa tu correo electrónico." data-msg-email="Por favor ingresa un email válido." maxlength="100" class="form-control" name="email" required>
 						</div>
 					</div>
 				</div>

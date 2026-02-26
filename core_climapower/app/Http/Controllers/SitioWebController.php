@@ -199,7 +199,7 @@ class SitioWebController extends Controller
 
                 Mail::to('contacto@climapower.cl')->send(new ContactoWeb($objDemo));
 
-                return redirect('contacto')->with('successenvio','Tu requerimiento fue ingresado exitosamente, nos contactaremos contigo a la brevedad!');
+                return redirect()->back()->with('successenvio','Tu requerimiento fue ingresado exitosamente, nos contactaremos contigo a la brevedad!');
             }
         } catch (\Throwable $th) {
             Log::info(print_r($th->getMessage(),true));
