@@ -53,7 +53,10 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-group col">
+					<div class="form-group col-8">
+						<x-captcha-container />
+					</div>
+					<div class="form-group col-4">
 						<input type="submit" value="Enviar Ahora" class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-4" data-loading-text="Cargando...">
 					</div>
 				</div>
@@ -108,4 +111,7 @@
 		</div>
 	</div>
 </div>
+@endsection
+@section('javascript')
+<x-captcha-js />
 @endsection

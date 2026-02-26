@@ -177,7 +177,7 @@ class SitioWebController extends Controller
                 'nombre_completo' => 'required',
                 'email' => 'email|required',
                 'mensaje' => 'required',
-                //Captcha::getResponseName() => ['required', 'captcha'],
+                Captcha::getResponseName() => ['required', 'captcha'],
             );
 
             $mensaje = array(
