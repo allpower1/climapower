@@ -519,12 +519,12 @@
 	</div>
 </section>
 
-<section class="section section-text-light section-background m-0" style="background: url('img/demos/business-consulting/contact/contact-background.jpg'); background-size: cover;">
+<!-- seccion footer -->
+<section class="section section-text-light section-background m-0" style="background: url('{{ $fondofooter }}'); background-size: cover;">
 	<div class="container">
 		<div class="row justify-content-md-center">
 			<div class="col-lg-6 mb-5 mb-lg-0">
 				<h2 class="font-weight-bold">- Contáctanos</h2>
-				<p class="custom-opacity-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper.</p>
 				<div class="row">
 					<div class="col-md-6 custom-sm-margin-top">
 						<h4 class="mb-1">Llámanos</h4>

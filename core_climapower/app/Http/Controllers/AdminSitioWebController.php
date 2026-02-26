@@ -8,6 +8,8 @@ use App\Http\Requests\Admin\UpdateAdminContactoOtrosRequest;
 use App\Http\Requests\Admin\UpdateAdminSitioWebRequest;
 use App\Models\AdminContactoOtros;
 use App\Models\AdminSitioWeb;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class AdminSitioWebController extends Controller
 {
@@ -64,9 +66,32 @@ class AdminSitioWebController extends Controller
         $admincontactootros->casos_exitos = $request->get('casos_exitos');
         $admincontactootros->clientes_satisfechos = $request->get('clientes_satisfechos');
         $admincontactootros->consultores_profesionales = $request->get('consultores_profesionales');
+
+        if ($request->hasFile('adjuntofondofooter')) {
+            $file = $request->file('adjuntofondofooter');
+            $extension = $file->getClientOriginalExtension();
+            $filename = date('Y').'_fondofooter_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
+
+            Storage::disk('adjuntofondofooter')->put($filename, File::get($file));
+
+            $admincontactootros->adjunto_fondo_footer = $filename;
+        }
+
         $admincontactootros->update();
 
         return redirect('admin/admincontactootros')->with('msj','Sección actualizada exitosamente');
+    }
+
+    protected function random_string()
+    {
+        $key = '';
+        $keys = array_merge(range('a', 'z'), range(0, 9));
+
+        for ($i = 0; $i < 10; $i++) {
+            $key .= $keys[array_rand($keys)];
+        }
+
+        return $key;
     }
 
 }

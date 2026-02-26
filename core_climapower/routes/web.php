@@ -123,6 +123,9 @@ Route::get('fileequipo/{path}', [FilesRespaldosController::class,'adjuntoequipo'
 Route::get('acerca_nosotros',[SitioWebController::class,'sobrenosotros']);
 Route::get('fileacercanosotros/{path}', [FilesRespaldosController::class,'adjuntoacercanosotros']);
 
+//footer
+Route::get('filefondofooter/{path}', [FilesRespaldosController::class,'adjuntofondofooter']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);

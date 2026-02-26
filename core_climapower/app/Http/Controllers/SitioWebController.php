@@ -38,7 +38,15 @@ class SitioWebController extends Controller
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros'));
+        //procesar fonodo footer
+        $fondofooter = 'img/demos/business-consulting/contact/contact-background.jpg';
+        if($datasitio){
+            if($datasitio->adjunto_fondo_footer){
+                $fondofooter = 'filefondofooter/'.$datasitio->adjunto_fondo_footer;
+            }
+        }
+
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','fondofooter'));
     }
 
     public function listadoexperiencias()

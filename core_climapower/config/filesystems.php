@@ -89,6 +89,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntofondofooter' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntofondofooter'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*

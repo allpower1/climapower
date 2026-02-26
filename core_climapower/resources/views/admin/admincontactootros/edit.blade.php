@@ -16,7 +16,7 @@
 @endsection
 
 @section('content')
-    <form class="form-horizontal" method="post" action="{{ url('admin/admincontactootros/actualizar') }}">
+    <form class="form-horizontal" method="post" action="{{ url('admin/admincontactootros/actualizar') }}" enctype="multipart/form-data">
         @csrf
 
         @include('partials.alerts')
@@ -102,6 +102,29 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label">Imagen Fondo Footer Actual</label>
+                            <div class="col-sm-10">
+                                @if($admincontactootros->adjunto_fondo_footer)
+                                    <img src="{{ url('filefondofooter/'.$admincontactootros->adjunto_fondo_footer) }}" alt="" style="width:350px;">
+                                @else
+                                    <img src="{{ url('img/demos/business-consulting/contact/contact-background.jpg') }}" alt="" style="width:350px;">
+                                @endif
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="adjuntofondofooter" class="col-sm-2 control-label">Imagen Fondo Footer (1920x584)</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" name="adjuntofondofooter" id="adjuntofondofooter" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg">
+                                <p class="help-block"></p>
+                                @if($errors->has('adjuntofondofooter'))
+                                <p class="help-block">
+                                    {{ $errors->first('adjuntofondofooter') }}
+                                </p>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group mb-0">
                             <div style="text-align: right;">
                                 <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">
