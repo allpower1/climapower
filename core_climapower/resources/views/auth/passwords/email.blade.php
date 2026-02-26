@@ -19,7 +19,7 @@
         <div class="col-md-5 mx-auto">
             <div class="login-form">
                 <div class="login-header">
-                    <img src="{{ url('files/images/logo-tuladovip-negro.png') }}" alt="">
+                    <img src="{{ url('img/logoclimapower.png') }}" alt="">
                     <p>Restaurar password de tu cuenta TuLadoVIP.CL</p>
                 </div>
 

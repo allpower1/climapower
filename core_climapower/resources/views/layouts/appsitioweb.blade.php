@@ -9,16 +9,16 @@
         <link rel="canonical" href="{{ url()->current() }}" />
         <meta property="og:title" content="Tu Lado VIP - Masajistas, Escort, Gigolos, Stripper, Modelos, Swinger Cerca de Ti">
         <meta property="og:description" content="Somos la única Plataforma Web Publicitaria para reunir específicamente áreas y rubros especiales, segmentados por regiones y detalles individuales a nivel nacional.">
-        <meta property="og:image" content="https://www.tuladovip.cl/files/images/logo-tuladovip-color.png">
-        <meta property="og:url" content="https://www.tuladovip.cl">
+        <meta property="og:image" content="{{ url('img/logoclimapower.png') }}">
+        <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "TuLadoVIP",
-                "image": "https://www.tuladovip.cl/files/images/logo-tuladovip-color.png",
-                "url": "https://www.tuladovip.cl",
+                "image": "{{ url('img/logoclimapower.png') }}",
+                "url": "{{ url()->current() }}",
                 "telephone": "+569 79705919",
                 "address": {
                     "@type": "PostalAddress",

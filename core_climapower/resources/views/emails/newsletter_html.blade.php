@@ -140,7 +140,7 @@
                                                     <table cellspacing="0" cellpadding="0" border="0">
                                                         <tr>
                                                             <td style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND-COLOR: transparent">
-                                                                <img style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block" alt="" src="{{ url('files/images/logo-tuladovip-color.png') }}" width="338" data-stylelock="0" hspace="0" vspace="0" />
+                                                                <img style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block" alt="" src="{{ url('img/logoclimapower.png') }}" width="338" data-stylelock="0" hspace="0" vspace="0" />
                                                             </td>
                                                         </tr>
                                                     </table>
