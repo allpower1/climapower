@@ -69,8 +69,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-5 text-center">
-                    </div>
                 </div>
             </div>
         </div>
