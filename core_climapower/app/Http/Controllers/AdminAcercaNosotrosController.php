@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AdminAcercaNosotros;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManager;
 
 class AdminAcercaNosotrosController extends Controller
 {
@@ -55,13 +54,18 @@ class AdminAcercaNosotrosController extends Controller
         $acercanosotro->texto_segunda_parte = $request->get('texto_segunda_parte');
         $acercanosotro->texto_tercera_parte = $request->get('texto_tercera_parte');
 
+        $rutaimagenes = storage_path().'/respaldos/adjuntoacercanosotros/';
+
         //primera imagen
         if ($request->hasFile('adjuntoprimeraimagen')) {
             $file = $request->file('adjuntoprimeraimagen');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_acerca_nosotros_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoacercanosotros')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(371, 255);
+            $image->save($rutaimagenes.$filename);
 
             $acercanosotro->imagen_uno = $filename;
         }
@@ -72,7 +76,10 @@ class AdminAcercaNosotrosController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_acerca_nosotros_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoacercanosotros')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(371, 255);
+            $image->save($rutaimagenes.$filename);
 
             $acercanosotro->imagen_dos = $filename;
         }
@@ -83,7 +90,10 @@ class AdminAcercaNosotrosController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_acerca_nosotros_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoacercanosotros')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(371, 255);
+            $image->save($rutaimagenes.$filename);
 
             $acercanosotro->imagen_tres = $filename;
         }

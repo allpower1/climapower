@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\NuestroEquipo;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManager;
 
 class AdminNuestroEquipoController extends Controller
 {
@@ -40,11 +39,16 @@ class AdminNuestroEquipoController extends Controller
         ]);
 
         if ($request->hasFile('adjuntoequipo')) {
+            $ruta = storage_path().'/respaldos/adjuntoequipo/';
+
             $file = $request->file('adjuntoequipo');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_equipo_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoequipo')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(600, 600);
+            $image->save($ruta.$filename);
 
             $equipo = new NuestroEquipo;
             $equipo->nombre_completo = $request->get('nombre_completo');
@@ -89,11 +93,16 @@ class AdminNuestroEquipoController extends Controller
         $equipo->descripcion = $request->get('descripcion');
 
         if ($request->hasFile('adjuntoequipo')) {
+            $ruta = storage_path().'/respaldos/adjuntoequipo/';
+
             $file = $request->file('adjuntoequipo');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_equipo_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoequipo')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(600, 600);
+            $image->save($ruta.$filename);
 
             $equipo->adjunto = $filename;
         }

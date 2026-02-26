@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\SliderHome;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManager;
 
 class AdminSliderHomeController extends Controller
 {
@@ -38,11 +37,16 @@ class AdminSliderHomeController extends Controller
         ]);
 
         if ($request->hasFile('adjuntoimagen')) {
+            $ruta = storage_path().'/respaldos/adjuntosliderhome/';
+
             $file = $request->file('adjuntoimagen');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_slider_home_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntosliderhome')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(1920, 874);
+            $image->save($ruta.$filename);
 
             $sliderhome = new SliderHome;
             $sliderhome->titulo_parte_1 = $request->get('titulo_parte_1');
@@ -81,11 +85,16 @@ class AdminSliderHomeController extends Controller
         $sliderhome->url_boton = $request->get('url_boton');
 
         if ($request->hasFile('adjuntoimagen')) {
+            $ruta = storage_path().'/respaldos/adjuntosliderhome/';
+
             $file = $request->file('adjuntoimagen');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_slider_home_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntosliderhome')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(1920, 874);
+            $image->save($ruta.$filename);
 
             $sliderhome->imagen = $filename;
         }

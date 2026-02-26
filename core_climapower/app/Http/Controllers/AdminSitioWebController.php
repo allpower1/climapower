@@ -8,8 +8,7 @@ use App\Http\Requests\Admin\UpdateAdminContactoOtrosRequest;
 use App\Http\Requests\Admin\UpdateAdminSitioWebRequest;
 use App\Models\AdminContactoOtros;
 use App\Models\AdminSitioWeb;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManager;
 
 class AdminSitioWebController extends Controller
 {
@@ -71,11 +70,16 @@ class AdminSitioWebController extends Controller
         $admincontactootros->seccion_precontacto_subtitulo = $request->get('subtitulo');
 
         if ($request->hasFile('adjuntofondofooter')) {
+            $rutaimagenes = storage_path().'/respaldos/adjuntofondofooter/';
+
             $file = $request->file('adjuntofondofooter');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_fondofooter_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntofondofooter')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(1920, 584);
+            $image->save($rutaimagenes.$filename);
 
             $admincontactootros->adjunto_fondo_footer = $filename;
         }

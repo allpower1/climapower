@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreExperienciasRequest;
 use App\Models\Experiencias;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManager;
 
 class AdminExperienciasController extends Controller
 {
@@ -35,11 +34,16 @@ class AdminExperienciasController extends Controller
         ]);
 
         if ($request->hasFile('adjuntoexperiencia')) {
+            $ruta = storage_path().'/respaldos/adjuntoexperiencia/';
+
             $file = $request->file('adjuntoexperiencia');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_experiencia_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoexperiencia')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(111, 106);
+            $image->save($ruta.$filename);
 
             $experiencia = new Experiencias;
             $experiencia->titulo = $request->get('titulo');
@@ -72,11 +76,16 @@ class AdminExperienciasController extends Controller
         $experiencia->descripcion = $request->get('descripcion');
 
         if ($request->hasFile('adjuntoexperiencia')) {
+            $ruta = storage_path().'/respaldos/adjuntoexperiencia/';
+
             $file = $request->file('adjuntoexperiencia');
             $extension = $file->getClientOriginalExtension();
             $filename = date('Y').'_experiencia_'.date('Y-m-d').'_'.$this->random_string().'.'.$extension;
 
-            Storage::disk('adjuntoexperiencia')->put($filename, File::get($file));
+            $manager = new ImageManager(['driver' => 'gd']);
+            $image = $manager->make($file);
+            $image->fit(111, 106);
+            $image->save($ruta.$filename);
 
             $experiencia->adjunto = $filename;
         }
