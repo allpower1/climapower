@@ -8,7 +8,7 @@
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="#">
-                                <img alt="Porto" width="82" height="40" src="{{ url('img/logo-default-slim-dark-small.png') }}">
+                                <img alt="ClimaPower" width="82" height="40" src="{{ url('img/logoclimapower.png') }}">
                             </a>
                         </div>
                     </div>
