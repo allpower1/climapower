@@ -223,7 +223,7 @@ class SitioWebController extends Controller
                 $objDemo->email = $request->get('email');
                 $objDemo->mensaje = $request->get('mensaje');
 
-                Mail::to('contacto@climapower.cl')->send(new ContactoWeb($objDemo));
+                Mail::to('contacto@climatizacion-hvac.cl')->send(new ContactoWeb($objDemo));
 
                 return redirect()->back()->with('successenvio','Tu requerimiento fue ingresado exitosamente, nos contactaremos contigo a la brevedad!');
             }
@@ -264,7 +264,7 @@ class SitioWebController extends Controller
                 $objDemo = new \stdClass();
                 $objDemo->email = $request->get('email');
 
-                Mail::to('contacto@tuladovip.cl')->send(new NewsLetterWeb($objDemo));
+                Mail::to('contacto@climatizacion-hvac.cl')->send(new NewsLetterWeb($objDemo));
 
                 return redirect()->back()->with('successEnvioNewsletter','Tu newsletter fue ingresado exitosamente, agradecemos tu preferencia!');
             }
@@ -324,7 +324,7 @@ class SitioWebController extends Controller
                 $objDemo->cargo = $request->get('cargo');
                 $objDemo->testimonio = $request->get('testimonio');
 
-                Mail::to($request->get('email'))->cc('contacto@climapower.cl')->send(new TestimonioWeb($objDemo));
+                Mail::to($request->get('email'))->cc('contacto@climatizacion-hvac.cl')->send(new TestimonioWeb($objDemo));
 
                 return redirect()->back()->with('successenviotestimonio','Tu testimonio fue ingresado exitosamente, revisaremos tu testimonio a la brevedad!');
             }
