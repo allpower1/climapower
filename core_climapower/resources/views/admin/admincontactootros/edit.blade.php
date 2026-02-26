@@ -25,6 +25,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <hr>
+                        <h3>Datos Contacto</h3>
                         <div class="form-group row">
                             <label for="telefono" class="col-sm-2 control-label">Teléfono*</label>
                             <div class="col-sm-10">
@@ -45,7 +47,8 @@
                                 <input type="text" class="form-control" name="nuestra_ubicacion" id="nuestra_ubicacion" value="{{ $admincontactootros->nuestra_ubicacion }}"/>
                             </div>
                         </div>
-                        <br>
+                        <hr>
+                        <h3>Redes Sociales</h3>
                         <div class="form-group row">
                             <label for="rrss_facebook" class="col-sm-2 control-label">RRSS Facebook</label>
                             <div class="col-sm-10">
@@ -73,7 +76,8 @@
                                 <input type="text" class="form-control" name="rrss_linkedin" id="rrss_linkedin" value="{{ $admincontactootros->rrss_linkedin }}"/>
                             </div>
                         </div>
-                        <br>
+                        <hr>
+                        <h3>Información Historica</h3>
                         <div class="form-group row">
                             <label for="anios_negocio" class="col-sm-2 control-label">Años en el negocio</label>
                             <div class="col-sm-10">
@@ -101,7 +105,30 @@
                                 <input type="number" class="form-control" name="consultores_profesionales" id="consultores_profesionales" value="{{ $admincontactootros->consultores_profesionales }}"/>
                             </div>
                         </div>
+                        <hr>
+                        <h3>Sección Inicial y Cierre Complemento de Contacto</h3>
+                        <div class="form-group row">
+                            <label for="titulo_parte_uno" class="col-sm-2 control-label">Titulo Parte 1</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="titulo_parte_uno" id="titulo_parte_uno" placeholder="Ej. ¿Buscas un" value="{{ $admincontactootros->seccion_precontacto_titulo_parte1 }}"/>
+                            </div>
+                        </div>
                         <br>
+                        <div class="form-group row">
+                            <label for="titulo_parte_dos" class="col-sm-2 control-label">Titulo Parte 2</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="titulo_parte_dos" id="titulo_parte_dos" placeholder="Ej. Consultor de plan de Negocios?" value="{{ $admincontactootros->seccion_precontacto_titulo_parte2 }}"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row">
+                            <label for="subtitulo" class="col-sm-2 control-label">SubTitulo</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="subtitulo" id="subtitulo" placeholder="Ej. Agenda tu sesión de estrategia empresarial ahora mismo" value="{{ $admincontactootros->seccion_precontacto_subtitulo }}"/>
+                            </div>
+                        </div>
+                        <hr>
+                        <h3>Footer</h3>
                         <div class="form-group row">
                             <label class="col-sm-2 control-label">Imagen Fondo Footer Actual</label>
                             <div class="col-sm-10">

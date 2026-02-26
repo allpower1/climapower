@@ -66,6 +66,9 @@ class AdminSitioWebController extends Controller
         $admincontactootros->casos_exitos = $request->get('casos_exitos');
         $admincontactootros->clientes_satisfechos = $request->get('clientes_satisfechos');
         $admincontactootros->consultores_profesionales = $request->get('consultores_profesionales');
+        $admincontactootros->seccion_precontacto_titulo_parte1 = $request->get('titulo_parte_uno');
+        $admincontactootros->seccion_precontacto_titulo_parte2 = $request->get('titulo_parte_dos');
+        $admincontactootros->seccion_precontacto_subtitulo = $request->get('subtitulo');
 
         if ($request->hasFile('adjuntofondofooter')) {
             $file = $request->file('adjuntofondofooter');

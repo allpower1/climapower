@@ -37,14 +37,15 @@
 	</div>
 </div>
 
+<!-- seccion precontacto -->
 <section class="looking-for custom-position-1 custom-md-border-top z-index-1">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-6 col-lg-7">
 				<div class="looking-for-box">
-					<h2>- <span class="text-1 custom-secondary-font">Are you looking for a</span><br>
-					Business Plan Consultant?</h2>
-					<p>Schedule your company strategy right session now</p>
+					<h2>- <span class="text-1 custom-secondary-font">{{ $datasitio->seccion_precontacto_titulo_parte1 }}</span><br>
+					{{ $datasitio->seccion_precontacto_titulo_parte2 }}</h2>
+					<p>{{ $datasitio->seccion_precontacto_subtitulo }}</p>
 				</div>
 			</div>
 			<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">
@@ -489,14 +490,15 @@
 	</div>
 </section>
 
+<!-- seccion precontacto -->
 <section class="looking-for section-primary">
 	<div class="container">
 		<div class="row align-items-center">
 			<div class="col-md-6 col-lg-7">
 				<div class="looking-for-box">
-					<h2>- <span class="text-1 custom-secondary-font">Are you looking for a</span><br>
-					Business plan Consultant?</h2>
-					<p class="mb-4 mb-md-0">Schedule your company strategy right session now</p>
+					<h2>- <span class="text-1 custom-secondary-font">{{ $datasitio->seccion_precontacto_titulo_parte1 }}</span><br>
+					{{ $datasitio->seccion_precontacto_titulo_parte2 }}</h2>
+					<p class="mb-4 mb-md-0">{{ $datasitio->seccion_precontacto_subtitulo }}</p>
 				</div>
 			</div>
 			<div class="col-md-3 d-flex justify-content-md-end mb-4 mb-md-0">

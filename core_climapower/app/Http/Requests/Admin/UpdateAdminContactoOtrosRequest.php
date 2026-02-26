@@ -23,9 +23,12 @@ class UpdateAdminContactoOtrosRequest extends FormRequest
     public function rules()
     {
         return [
-            'telefono'    => 'required',
-            'email'        => 'required',
-            'nuestra_ubicacion'       => 'required',
+            'telefono'          => 'required',
+            'email'             => 'required',
+            'nuestra_ubicacion' => 'required',
+            'titulo_parte_uno'  => 'required',
+            'titulo_parte_dos'  => 'required',
+            'subtitulo'         => 'required',
         ];
     }
 }
