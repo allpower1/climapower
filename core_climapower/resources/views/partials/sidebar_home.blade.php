@@ -97,7 +97,7 @@
                         <!--end:Menu sub-->
                     </div>
                     <!--end:Menu item plataforma web-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'experiencias' || $request->segment(2) == 'nuestroequipo' || $request->segment(2) == 'acercanosotros' || $request->segment(2) == 'sliderhome' || $request->segment(2) == 'testimonios')?'show':'' }}">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'experiencias' || $request->segment(2) == 'nuestroequipo' || $request->segment(2) == 'acercanosotros' || $request->segment(2) == 'sliderhome' || $request->segment(2) == 'testimonios' || $request->segment(2) == 'nuestros_proyectos')?'show':'' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
@@ -219,6 +219,22 @@
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">Testimonios</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                        </div>
+                        <!--end:Menu sub-->
+                        <!--begin:Menu sub nuestros proyectos -->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link {{ ($request->segment(1) == 'admin' and $request->segment(2) == 'nuestros_proyectos')?'active':'' }}" href="{{ url('admin/nuestros_proyectos') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Nuestros Proyectos</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>

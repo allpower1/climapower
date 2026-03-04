@@ -107,6 +107,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntoproyecto' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntoproyecto'),
+            'visibility' => 'private',
+        ],
+
     ],
 
     /*
