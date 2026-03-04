@@ -19,6 +19,7 @@ use App\Models\AdminContactoOtros;
 use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
+use App\Models\NuestrosProyectos;
 use App\Models\PreguntasFrecuentes;
 use App\Models\SliderHome;
 use App\Models\Testimonios;
@@ -43,6 +44,7 @@ class SitioWebController extends Controller
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
         $sliderhome = SliderHome::where('estado',1)->get();
         $listtestimonios = Testimonios::where('estado',1)->get();
+        $listproyectos = NuestrosProyectos::where('estado',1)->get();
 
         //validar si existe data basica
         if(!$datasitio){
@@ -57,7 +59,7 @@ class SitioWebController extends Controller
             }
         }
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter','listtestimonios'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter','listtestimonios','listproyectos'));
     }
 
     public function listadoexperiencias()
@@ -130,6 +132,23 @@ class SitioWebController extends Controller
         $listtestimonios = Testimonios::where('estado',1)->get();
 
         return view('site_testimonios', compact('listtestimonios'));
+    }
+
+    public function listadoproyectos()
+    {
+        $listproyectos = NuestrosProyectos::where('estado',1)->get();
+
+        return view('site_listado_proyectos', compact('listproyectos'));
+    }
+
+    public function detalleproyecto($id)
+    {
+        $proyecto = NuestrosProyectos::where('id',$id)->first();
+
+        if(!$proyecto){
+            return abort(404);
+        }
+        return view('site_detalle_proyecto', compact('proyecto'));
     }
 
     public function terminosycondiciones()

@@ -35,8 +35,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="#">
-                                                Cases
+                                            <a class="nav-link {{ ($request->segment(1) == 'proyectos')?'active':'' }}" href="{{ url('proyectos') }}">
+                                                Proyectos
                                             </a>
                                         </li>
                                         <li>

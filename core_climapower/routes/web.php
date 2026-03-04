@@ -138,7 +138,8 @@ Route::get('testimonios',[SitioWebController::class,'testimonios']);
 Route::get('filetestimonio/{path}', [FilesRespaldosController::class,'adjuntotestimonio']);
 
 //nuestros proyectos
-Route::get('proyectos',[SitioWebController::class,'proyectos']);
+Route::get('proyecto/{id}',[SitioWebController::class,'detalleproyecto']);
+Route::get('proyectos',[SitioWebController::class,'listadoproyectos']);
 Route::get('fileproyecto/{path}', [FilesRespaldosController::class,'adjuntoproyecto']);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
