@@ -33,18 +33,14 @@
                             <label for="titulo" class="col-sm-2 control-label">Titulo*</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="titulo" id="titulo" value="{{ $adminsitioweb->titulo }}"/>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 control-label">Sub-Titulo</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="subtitulo" id="subtitulo" value="{{ $adminsitioweb->subtitulo }}"/>
+                                <p class="help-block"></p>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="datatxt" class="col-sm-2 control-label">Data Menú*</label>
                             <div class="col-sm-10">
                                 <textarea name="datatxt" id="datatxt">{!! $adminsitioweb->datatxt !!}</textarea>
+                                <p class="help-block"></p>
                             </div>
                         </div>
                         <div class="form-group mb-0">

@@ -42,10 +42,42 @@ Route::get('loginadmin', [LoginController::class, 'showLoginForm']);
 Route::get('login', [LoginController::class, 'showLoginForm']);
 
 Route::get('sobrenosotros', [SitioWebController::class, 'sobrenosotros']);
-Route::get('terminosycondiciones', [SitioWebController::class, 'terminosycondiciones']);
-Route::get('politicas_privacidad', [SitioWebController::class, 'politicas_privacidad']);
-Route::get('pago_seguro', [SitioWebController::class, 'pago_seguro']);
-Route::get('garantia', [SitioWebController::class, 'garantia']);
+
+//INICIO SITIOS AUTOADMINISTRABLES
+//EMPRESA
+Route::get('site_climapower', [SitioWebController::class, 'AdminSiteClimaPower']);
+Route::get('site_grupochr', [SitioWebController::class, 'AdminSiteGrupoChr']);
+Route::get('directorio', [SitioWebController::class, 'AdminDirectorio']);
+Route::get('datos_comerciales', [SitioWebController::class, 'AdminDatosComerciales']);
+Route::get('servicios', [SitioWebController::class, 'AdminServicios']);
+Route::get('productos', [SitioWebController::class, 'AdminProductos']);
+Route::get('contratos', [SitioWebController::class, 'AdminContratos']);
+Route::get('eficiencia_energetica', [SitioWebController::class, 'AdminEficienciaEnergetica']);
+Route::get('unidades_negocios', [SitioWebController::class, 'AdminUnidadesNegocios']);
+//IMPORTANTE
+Route::get('informacion_general', [SitioWebController::class, 'AdminInformacionGeneral']);
+Route::get('terminosycondiciones', [SitioWebController::class, 'AdminTerminosYCondiciones']);
+Route::get('politicas_calidad', [SitioWebController::class, 'AdminPoliticasCalidad']);
+Route::get('politicas_cookies', [SitioWebController::class, 'AdminPoliticasCookies']);
+Route::get('formas_pagos', [SitioWebController::class, 'AdminFormasPagos']);
+Route::get('comunidades', [SitioWebController::class, 'AdminComunidades']);
+Route::get('despachos', [SitioWebController::class, 'AdminDespachos']);
+Route::get('excluye', [SitioWebController::class, 'AdminExcluye']);
+Route::get('garantias', [SitioWebController::class, 'AdminGarantias']);
+Route::get('aviso_legal', [SitioWebController::class, 'AdminAvisoLegal']);
+//LINKS
+Route::get('tienda_electronica', [SitioWebController::class, 'AdminTiendaElectronica']);
+Route::get('preguntas_frecuentes', [SitioWebController::class, 'AdminPreguntasFrecuentes']);
+Route::get('descargas_pdf', [SitioWebController::class, 'AdminDescargasPDF']);
+Route::get('normativas', [SitioWebController::class, 'AdminNormativas']);
+Route::get('partners', [SitioWebController::class, 'AdminPartners']);
+Route::get('soporte', [SitioWebController::class, 'AdminSoporte']);
+Route::get('reclamos', [SitioWebController::class, 'AdminReclamos']);
+Route::get('oferta_trabajo', [SitioWebController::class, 'AdminOfertaTrabajo']);
+Route::get('trabaja_con_nosotros', [SitioWebController::class, 'AdminTrabajaConNosotros']);
+Route::get('site_grupochrcl', [SitioWebController::class, 'AdminSiteGrupoChrCL']);
+//FIN SITIOS AUTOADMINISTRABLES
+
 Route::get('contacto', [SitioWebController::class, 'contacto']);
 Route::post('enviar_contacto', [SitioWebController::class, 'procesarContacto']);
 Route::post('enviar_newsletter', [SitioWebController::class, 'procesarNewsLetter']);

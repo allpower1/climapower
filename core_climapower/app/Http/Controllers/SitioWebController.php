@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\AdminFooter;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Support\Facades\Log;
@@ -16,6 +15,7 @@ use App\Mail\ContactoWeb;
 use App\Mail\TestimonioWeb;
 use App\Models\AdminAcercaNosotros;
 use App\Models\AdminContactoOtros;
+use App\Models\AdminSitioWeb;
 use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
@@ -151,9 +151,10 @@ class SitioWebController extends Controller
         return view('site_detalle_proyecto', compact('proyecto'));
     }
 
-    public function terminosycondiciones()
+    //INICIO SITIOS AUTOADMINISTRABLES
+    public function AdminSiteClimaPower()
     {
-        $datasitio = AdminFooter::where('id',2)->first();
+        $datasitio = AdminSitioWeb::where('id',1)->first();
 
         if($datasitio->titulo == '' || $datasitio->titulo == null){
             return abort(404);
@@ -162,9 +163,9 @@ class SitioWebController extends Controller
         return view('sitio_new_footer_autoadministrable', compact('datasitio'));
     }
 
-    public function politicas_privacidad()
+    public function AdminSiteGrupoChr()
     {
-        $datasitio = AdminFooter::where('id',3)->first();
+        $datasitio = AdminSitioWeb::where('id',2)->first();
 
         if($datasitio->titulo == '' || $datasitio->titulo == null){
             return abort(404);
@@ -173,9 +174,9 @@ class SitioWebController extends Controller
         return view('sitio_new_footer_autoadministrable', compact('datasitio'));
     }
 
-    public function pago_seguro()
+    public function AdminDirectorio()
     {
-        $datasitio = AdminFooter::where('id',4)->first();
+        $datasitio = AdminSitioWeb::where('id',3)->first();
 
         if($datasitio->titulo == '' || $datasitio->titulo == null){
             return abort(404);
@@ -184,9 +185,9 @@ class SitioWebController extends Controller
         return view('sitio_new_footer_autoadministrable', compact('datasitio'));
     }
 
-    public function garantia()
+    public function AdminDatosComerciales()
     {
-        $datasitio = AdminFooter::where('id',5)->first();
+        $datasitio = AdminSitioWeb::where('id',4)->first();
 
         if($datasitio->titulo == '' || $datasitio->titulo == null){
             return abort(404);
@@ -194,6 +195,282 @@ class SitioWebController extends Controller
 
         return view('sitio_new_footer_autoadministrable', compact('datasitio'));
     }
+
+    public function AdminServicios()
+    {
+        $datasitio = AdminSitioWeb::where('id',5)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminProductos()
+    {
+        $datasitio = AdminSitioWeb::where('id',6)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminContratos()
+    {
+        $datasitio = AdminSitioWeb::where('id',7)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminEficienciaEnergetica()
+    {
+        $datasitio = AdminSitioWeb::where('id',8)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminUnidadesNegocios()
+    {
+        $datasitio = AdminSitioWeb::where('id',9)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminInformacionGeneral()
+    {
+        $datasitio = AdminSitioWeb::where('id',10)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminTerminosYCondiciones()
+    {
+        $datasitio = AdminSitioWeb::where('id',11)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminPoliticasCalidad()
+    {
+        $datasitio = AdminSitioWeb::where('id',12)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminPoliticasCookies()
+    {
+        $datasitio = AdminSitioWeb::where('id',13)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminFormasPagos()
+    {
+        $datasitio = AdminSitioWeb::where('id',14)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminComunidades()
+    {
+        $datasitio = AdminSitioWeb::where('id',15)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminDespachos()
+    {
+        $datasitio = AdminSitioWeb::where('id',16)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminExcluye()
+    {
+        $datasitio = AdminSitioWeb::where('id',17)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminGarantias()
+    {
+        $datasitio = AdminSitioWeb::where('id',18)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminAvisoLegal()
+    {
+        $datasitio = AdminSitioWeb::where('id',19)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminTiendaElectronica()
+    {
+        $datasitio = AdminSitioWeb::where('id',20)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminPreguntasFrecuentes()
+    {
+        $datasitio = AdminSitioWeb::where('id',21)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminDescargasPDF()
+    {
+        $datasitio = AdminSitioWeb::where('id',22)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminNormativas()
+    {
+        $datasitio = AdminSitioWeb::where('id',23)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminPartners()
+    {
+        $datasitio = AdminSitioWeb::where('id',24)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminSoporte()
+    {
+        $datasitio = AdminSitioWeb::where('id',25)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminReclamos()
+    {
+        $datasitio = AdminSitioWeb::where('id',26)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminOfertaTrabajo()
+    {
+        $datasitio = AdminSitioWeb::where('id',27)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminTrabajaConNosotros()
+    {
+        $datasitio = AdminSitioWeb::where('id',28)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+
+    public function AdminSiteGrupoChrCL()
+    {
+        $datasitio = AdminSitioWeb::where('id',29)->first();
+
+        if($datasitio->titulo == '' || $datasitio->titulo == null){
+            return abort(404);
+        }
+
+        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+    }
+    //FIN SITIOS AUTOADMINISTRABLES
 
     public function contacto()
     {
