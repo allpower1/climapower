@@ -30,6 +30,6 @@ class NewsLetterWeb extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.newsletter_html')->subject('Newsletter desde la WEB TuladoVIP.CL');
+        return $this->view('emails.newsletter_html')->subject('Newsletter desde la WEB ClimaPower.CL');
     }
 }

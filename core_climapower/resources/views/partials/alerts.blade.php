@@ -4,6 +4,12 @@
     </div>
 @endif
 
+@if (Session::has('successEnvioNewsletter'))
+    <div class="contact-form-success alert alert-info mt-4">
+        {{ Session::get('successEnvioNewsletter') }}
+    </div>
+@endif
+
 @if (Session::has('message'))
     <div class="contact-form-success alert alert-info mt-4">
         {{ Session::get('message') }}
@@ -31,6 +37,13 @@
 @if (session('msjerror'))
     <div class="contact-form-error alert alert-danger mt-4">
         <strong>Error!</strong> {{ session('msjerror') }}.
+        <span class="mail-error-message text-1 d-block"></span>
+    </div>
+@endif
+
+@if (session('errorEnvioNewsletter'))
+    <div class="contact-form-error alert alert-danger mt-4">
+        <strong>Error!</strong> {{ session('errorEnvioNewsletter') }}.
         <span class="mail-error-message text-1 d-block"></span>
     </div>
 @endif
