@@ -105,7 +105,7 @@
                         <div class="form-group row">
                             <label for="texto_primera_parte" class="col-sm-2 control-label">Primera Parte HTML*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="texto_primera_parte" id="texto_primera_parte" required>{!! $dataan->texto_primera_parte !!}</textarea>
+                                <textarea class="form-control" name="texto_primera_parte" id="texto_primera_parte">{!! $dataan->texto_primera_parte !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('texto_primera_parte'))
                                 <p class="help-block">
@@ -117,7 +117,7 @@
                         <div class="form-group row">
                             <label for="texto_segunda_parte" class="col-sm-2 control-label">Segunda Parte HTML*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="texto_segunda_parte" id="texto_segunda_parte" required>{!! $dataan->texto_segunda_parte !!}</textarea>
+                                <textarea class="form-control" name="texto_segunda_parte" id="texto_segunda_parte">{!! $dataan->texto_segunda_parte !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('texto_segunda_parte'))
                                 <p class="help-block">
@@ -129,7 +129,7 @@
                         <div class="form-group row">
                             <label for="texto_tercera_parte" class="col-sm-2 control-label">Tercera Parte HTML*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="texto_tercera_parte" id="texto_tercera_parte" required>{!! $dataan->texto_tercera_parte !!}</textarea>
+                                <textarea class="form-control" name="texto_tercera_parte" id="texto_tercera_parte">{!! $dataan->texto_tercera_parte !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('texto_tercera_parte'))
                                 <p class="help-block">

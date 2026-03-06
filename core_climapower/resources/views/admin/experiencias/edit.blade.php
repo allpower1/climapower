@@ -79,7 +79,7 @@
                         <div class="form-group row">
                             <label for="datatxt" class="col-sm-2 control-label">Descripción*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descripcion" id="datatxt" required>{!! $experiencia->descripcion !!}</textarea>
+                                <textarea class="form-control" name="descripcion" id="datatxt">{!! $experiencia->descripcion !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('descripcion'))
                                 <p class="help-block">

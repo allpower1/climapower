@@ -103,7 +103,7 @@
                         <div class="form-group row">
                             <label for="descripcion_breve" class="col-sm-2 control-label">Descripción Breve*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descripcion_breve" id="descripcion_breve" required>{!! $equipo->descripcion_breve !!}</textarea>
+                                <textarea class="form-control" name="descripcion_breve" id="descripcion_breve">{!! $equipo->descripcion_breve !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('descripcion_breve'))
                                 <p class="help-block">
@@ -115,7 +115,7 @@
                         <div class="form-group row">
                             <label for="descripcion" class="col-sm-2 control-label">Descripción*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descripcion" id="descripcion" required>{!! $equipo->descripcion !!}</textarea>
+                                <textarea class="form-control" name="descripcion" id="descripcion">{!! $equipo->descripcion !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('descripcion'))
                                 <p class="help-block">

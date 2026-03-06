@@ -79,7 +79,7 @@
                         <div class="form-group row">
                             <label for="datahtml" class="col-sm-2 control-label">Data HTML*</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="datahtml" id="datahtml" required>{!! $proyecto->datahtml !!}</textarea>
+                                <textarea class="form-control" name="datahtml" id="datahtml">{!! $proyecto->datahtml !!}</textarea>
                                 <p class="help-block"></p>
                                 @if($errors->has('datahtml'))
                                 <p class="help-block">
