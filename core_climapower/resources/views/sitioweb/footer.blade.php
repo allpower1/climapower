@@ -72,7 +72,10 @@
         <div class="container py-2">
             <div class="row py-4">
                 <div class="col d-flex align-items-center justify-content-center mb-4 mb-lg-0">
-                    <p>©{{ date('Y') }} | <span class="text-color-light">CLIMAPOWER®</span>  Todos los derechos reservados | Desarrollado por ALLPOWER® by GRUPOCHR®.</p>
+                    <p>©{{ date('Y') }} | <span class="text-color-light">CLIMAPOWER®</span>  Todos los derechos reservados | Desarrollado por <a href="https://allpower.cl/" target="_blank">ALLPOWER®</a></p>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center mb-4 mb-lg-0">
+                    <a href="https://grupochr.cl/" target="_blank"><p style="text-align: left;">by GRUPOCHR®.</p></a>
                 </div>
             </div>
         </div>
