@@ -44,7 +44,7 @@ class SitioWebController extends Controller
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
         $sliderhome = SliderHome::where('estado',1)->get();
         $listtestimonios = Testimonios::where('estado',1)->get();
-        $listproyectos = NuestrosProyectos::where('estado',1)->get();
+        $listproyectos = NuestrosProyectos::where('estado',1)->orderBy('id','desc')->get();
 
         //validar si existe data basica
         if(!$datasitio){
@@ -136,7 +136,7 @@ class SitioWebController extends Controller
 
     public function listadoproyectos()
     {
-        $listproyectos = NuestrosProyectos::where('estado',1)->get();
+        $listproyectos = NuestrosProyectos::where('estado',1)->orderBy('id','desc')->get();
 
         return view('site_listado_proyectos', compact('listproyectos'));
     }
