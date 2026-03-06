@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    {!! Form::model($testimonio, ['method' => 'POST','url' => ['admin/testimonio/actualizar', $testimonio->id], 'autocomplete' => 'off','class' => 'form-horizontal']) !!}
+    {!! Form::model($testimonio, ['method' => 'POST','url' => ['admin/testimonio/actualizar', $testimonio->id], 'autocomplete' => 'off', 'enctype' => 'multipart/form-data', 'class' => 'form-horizontal']) !!}
 
         @include('partials.alerts')
 
@@ -31,28 +31,28 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label">Nombre</label>
+                            <label for="nombre" class="col-sm-2 control-label">Nombre</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $testimonio->nombre }}" disabled>
+                                <input type="text" name="nombre" class="form-control" value="{{ $testimonio->nombre }}" required>
                                 <p class="help-block"></p>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label">Email</label>
+                            <label for="email" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $testimonio->email }}" disabled>
+                                <input type="email" name="email" class="form-control" value="{{ $testimonio->email }}" required>
                                 <p class="help-block"></p>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label">Cargo</label>
+                            <label for="cargo" class="col-sm-2 control-label">Cargo</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" value="{{ $testimonio->cargo }}" disabled>
+                                <input type="text" name="cargo" class="form-control" value="{{ $testimonio->cargo }}">
                                 <p class="help-block"></p>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label">Imagen</label>
+                            <label class="col-sm-2 control-label">Imagen Actual</label>
                             <div class="col-sm-10">
                                 @if($testimonio->imagen)
                                     <img src="{{ url('filetestimonio/'.$testimonio->imagen) }}" alt class="img-fluid custom-rounded-image"/>
@@ -63,9 +63,21 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 control-label">Testimonio</label>
+                            <label for="adjuntoimagen" class="col-sm-2 control-label">Actualizar Imagen (234x225)</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" rows="5" disabled>{{ $testimonio->testimonio }}</textarea>
+                                <input type="file" class="form-control" name="adjuntoimagen" id="adjuntoimagen" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg">
+                                <p class="help-block"></p>
+                                @if($errors->has('adjuntoimagen'))
+                                <p class="help-block">
+                                    {{ $errors->first('adjuntoimagen') }}
+                                </p>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="testimonio" class="col-sm-2 control-label">Testimonio</label>
+                            <div class="col-sm-10">
+                                <textarea name="testimonio" class="form-control" rows="5">{{ $testimonio->testimonio }}</textarea>
                                 <p class="help-block"></p>
                             </div>
                         </div>
