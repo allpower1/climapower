@@ -7,7 +7,7 @@
         <meta name="author" content="CLIMAPOWER">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="{{ url()->current() }}" />
-        <meta property="og:title" content="Tu Lado VIP - Masajistas, Escort, Gigolos, Stripper, Modelos, Swinger Cerca de Ti">
+        <meta property="og:title" content="CLIMAPOWER">
         <meta property="og:description" content="Somos la única Plataforma Web Publicitaria para reunir específicamente áreas y rubros especiales, segmentados por regiones y detalles individuales a nivel nacional.">
         <meta property="og:image" content="{{ url('img/logoclimapower.png') }}">
         <meta property="og:url" content="{{ url()->current() }}">

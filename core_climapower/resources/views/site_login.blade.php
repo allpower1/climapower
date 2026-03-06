@@ -60,7 +60,7 @@
             <div class="login-form">
                 <div class="login-header">
                     <a href="{{ url('/') }}">
-                        <img src="{{ url('img/logoclimapower.png') }}" alt="">
+                        <img width="150" height="20" src="{{ url('img/logoclimapower.png') }}" alt="">
                     </a>
                     <p>Login con tu cuenta TuLadoVIP.CL</p>
                 </div>

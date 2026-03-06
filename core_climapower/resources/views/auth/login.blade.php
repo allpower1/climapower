@@ -10,7 +10,7 @@
                         <div class="card-body pt-0">
                             <div style="text-align: center;">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ url('img/logoclimapower.png') }}" style="margin: 30px;" alt="" height="50">
+                                    <img src="{{ url('img/logoclimapower.png') }}" alt="" width="150" height="20">
                                 </a>
                                 <br>
                                 <h5>Accede a tu cuenta</h5>

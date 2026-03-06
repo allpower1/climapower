@@ -140,7 +140,7 @@
                                                     <table cellspacing="0" cellpadding="0" border="0">
                                                         <tr>
                                                             <td style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND-COLOR: transparent">
-                                                                <img style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block" alt="" src="{{ url('img/logoclimapower.png') }}" width="338" data-stylelock="0" hspace="0" vspace="0" />
+                                                                <img style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block" alt="" src="{{ url('img/logoclimapowernegro.png') }}" width="338" data-stylelock="0" hspace="0" vspace="0" />
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -191,7 +191,7 @@
                                 <tr style="HEIGHT: 115px" height="115">
                                     <th class="contenttd" style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 570px; VERTICAL-ALIGN: top; BORDER-BOTTOM: medium none; FONT-WEIGHT: normal; PADDING-BOTTOM: 20px; TEXT-ALIGN: left; PADDING-TOP: 20px; PADDING-LEFT: 15px; BORDER-LEFT: medium none; PADDING-RIGHT: 15px; BACKGROUND-COLOR: transparent" colspan="2">
                                         <div>
-                                            <p style="FONT-SIZE: 12px; MARGIN-BOTTOM: 1em; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-TOP: 0px; COLOR: #575757; TEXT-ALIGN: center; LINE-HEIGHT: 15px; BACKGROUND-COLOR: transparent; mso-line-height-rule: exactly" align="center"><strong><span style="FONT-SIZE: 14px; LINE-HEIGHT: 18px">Tu Lado VIP</span></strong><br />
+                                            <p style="FONT-SIZE: 12px; MARGIN-BOTTOM: 1em; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-TOP: 0px; COLOR: #575757; TEXT-ALIGN: center; LINE-HEIGHT: 15px; BACKGROUND-COLOR: transparent; mso-line-height-rule: exactly" align="center"><strong><span style="FONT-SIZE: 14px; LINE-HEIGHT: 18px">CLIMAPOWER</span></strong><br />
                                                 <a title="" style="COLOR: #575757" href="{{ url('/') }}">{{ url('/') }}</a><br />
                                                 Santiago de Chile
                                             </p>
@@ -213,7 +213,7 @@
                                                 (Se han omitido los acentos por compatibilidad con diversos servidores de correo)<br />
                                             </span>
                                         </p>
-                                        <p style="FONT-SIZE: 10px; MARGIN-BOTTOM: 1em; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-TOP: 0px; COLOR: #7c7c7c; TEXT-ALIGN: center; LINE-HEIGHT: 12px; BACKGROUND-COLOR: transparent; mso-line-height-rule: exactly" align="center">&copy;<?php echo date('Y') ?> Tu Lado VIP.. Todos los derechos reservados.</p>
+                                        <p style="FONT-SIZE: 10px; MARGIN-BOTTOM: 1em; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-TOP: 0px; COLOR: #7c7c7c; TEXT-ALIGN: center; LINE-HEIGHT: 12px; BACKGROUND-COLOR: transparent; mso-line-height-rule: exactly" align="center">&copy;<?php echo date('Y') ?> CLIMAPOWER. Todos los derechos reservados.</p>
                                     </th>
                                 </tr>
                             </table>

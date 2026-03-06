@@ -18,7 +18,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="{{ url('home') }}" class="d-lg-none">
-                <img alt="Logo" src="{{ url('img/logoclimapower.png') }}" class="h-30px" />
+                <img alt="Logo" src="{{ url('img/logoclimapower.png') }}" class="h-30px" width="150" height="20"/>
             </a>
         </div>
         <!--end::Mobile logo-->
