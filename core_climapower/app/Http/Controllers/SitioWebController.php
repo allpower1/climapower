@@ -476,6 +476,7 @@ class SitioWebController extends Controller
     {
         try {
             $reglas = array(
+                'subject' => 'required',
                 'nombre_completo' => 'required',
                 'email' => 'email|required',
                 'mensaje' => 'required',
@@ -483,6 +484,7 @@ class SitioWebController extends Controller
             );
 
             $mensaje = array(
+                'subject.required' => 'El campo asunto es requerido',
                 'phone.required' => 'El campo celular es requerido',
                 'phone.digits_between' => 'El campo celular debe estar entre 7 and 12 digitos',
                 'subject.required' => 'El campo asunto es requerido',
@@ -496,18 +498,8 @@ class SitioWebController extends Controller
                 $errors = $validator->errors();
                 return redirect()->back()->withErrors($errors->first())->withInput();
             }else{
-                //validar numero de telefono que sea valido
-                /*
-                $phoneNumberUtil = \libphonenumber\PhoneNumberUtil::getInstance();
-                $phoneNumberObject = $phoneNumberUtil->parse($request->phone, 'CL');
-                $validacionnumerocelular = $phoneNumberUtil->isPossibleNumber($phoneNumberObject);
-
-                if($validacionnumerocelular != 1){
-                    return redirect()->back()->withErrors('Formato de número de celular inválido')->withInput();
-                }
-                */
-
                 $objDemo = new \stdClass();
+                $objDemo->subject = $request->get('subject');
                 $objDemo->nombre_completo = $request->get('nombre_completo');
                 $objDemo->email = $request->get('email');
                 $objDemo->mensaje = $request->get('mensaje');

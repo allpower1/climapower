@@ -31,6 +31,21 @@
 				<div class="row">
 					<div class="form-group col">
 						<div class="custom-input-box">
+							<i class="icon-check icons text-color-primary"></i>
+							<select name="subject" class="form-control" required>
+								<option value="">Seleccione asunto</option>
+								<option value="Contacto">Contacto</option>
+								<option value="Garantía">Garantía</option>
+								<option value="Felicitaciones">Felicitaciones</option>
+								<option value="Reclamos">Reclamos</option>
+								<option value="Otros">Otros</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col">
+						<div class="custom-input-box">
 							<i class="icon-user icons text-color-primary"></i>
 							<input type="text" placeholder="Nombre completo*" value="{{ old('nombre_completo') }}" data-msg-required="Por favor ingresa tu nombre." maxlength="100" class="form-control" name="nombre_completo" required>
 						</div>
