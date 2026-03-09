@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-        <loc>https://tuladovip.cl</loc>
+        <loc>https://climapower.cl</loc>
         <lastmod>2025-08-25T16:04:26-04:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://tuladovip.cl/planes/masajistas</loc>
+        <loc>https://climapower.cl/acerca_nosotros</loc>
             <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://tuladovip.cl/planes/agencias</loc>
+        <loc>https://climapower.cl/experiencias</loc>
             <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://tuladovip.cl/planes/publicidad</loc>
+        <loc>https://climapower.cl/proyectos</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://climapower.cl/testimonios</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://climapower.cl/nuestro_equipo</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://climapower.cl/contacto</loc>
             <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>

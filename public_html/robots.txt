@@ -32,4 +32,4 @@ User-agent: Yandex
 Disallow: /
 
 # Sitemap location
-Sitemap: https://www.tuladovip.cl/sitemap.xml
+Sitemap: https://www.climapower.cl/sitemap.xml
