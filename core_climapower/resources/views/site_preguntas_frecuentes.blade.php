@@ -20,7 +20,9 @@
     <div class="row">
         <div class="col">
             <h2 class="font-weight-normal text-7 mb-2">Preguntas <strong class="font-weight-extra-bold">Frecuentes</strong></h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula.</p>
+            <p class="lead">
+                {!! $datasitio->datatxt !!}
+            </p>
             <hr class="solid my-5">
             <div class="toggle toggle-primary m-0" data-plugin-toggle>
                 @if($listpreguntasfrecuentes)

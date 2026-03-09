@@ -374,9 +374,10 @@ class SitioWebController extends Controller
 
     public function AdminPreguntasFrecuentes()
     {
+        $datasitio = AdminSitioWeb::where('id',21)->first();
         $listpreguntasfrecuentes = PreguntasFrecuentes::where('estado',1)->get();
 
-        return view('site_preguntas_frecuentes', compact('listpreguntasfrecuentes'));
+        return view('site_preguntas_frecuentes', compact('datasitio','listpreguntasfrecuentes'));
     }
 
     public function AdminDescargasPDF()
