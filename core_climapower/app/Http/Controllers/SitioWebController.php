@@ -22,6 +22,7 @@ use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
 use App\Models\NuestrosProyectos;
 use App\Models\PreguntasFrecuentes;
+use App\Models\Servicios;
 use App\Models\SliderHome;
 use App\Models\Testimonios;
 use Intervention\Image\ImageManager;
@@ -200,12 +201,9 @@ class SitioWebController extends Controller
     public function AdminServicios()
     {
         $datasitio = AdminSitioWeb::where('id',5)->first();
+        $listservicios = Servicios::where('estado',1)->get();
 
-        if($datasitio->titulo == '' || $datasitio->titulo == null){
-            return abort(404);
-        }
-
-        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+        return view('site_servicios', compact('datasitio','listservicios'));
     }
 
     public function AdminProductos()
