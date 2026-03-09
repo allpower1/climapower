@@ -247,9 +247,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 6, 'loop': false, 'dots': true, 'nav': false}">
-		@if($listproyectos)
-			@forelse ($listproyectos as $indexproyecto => $proyecto)
+	@if($listproyectos->isNotEmpty())
+		<div class="owl-carousel show-nav-title custom-both-sides-shadow custom-dots-position-2 custom-dots-style-1 custom-xs-arrows-style-2 mb-0" data-plugin-options="{'items': 6, 'loop': false, 'dots': true, 'nav': false}">
+			@foreach ($listproyectos as $indexproyecto => $proyecto)
 				<div>
 					<a href="{{ url('/proyecto/'.$proyecto->id) }}" class="text-decoration-none">
 						<span class="thumb-info custom-thumb-info-style-1 thumb-info-hide-wrapper-bg">
@@ -270,11 +270,17 @@
 						</span>
 					</a>
 				</div>
-			@empty
-				<p>No existen registros de proyectos.</p>
-			@endforelse
-		@endif
-	</div>
+			@endforeach
+		</div>
+	@else
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<p>No existen registros de proyectos.</p>
+				</div>
+			</div>
+		</div>
+	@endif
 </section>
 
 <!-- seccion testimonios -->
