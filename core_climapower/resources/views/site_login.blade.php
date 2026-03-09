@@ -62,7 +62,7 @@
                     <a href="{{ url('/') }}">
                         <img width="150" height="20" src="{{ url('img/logoclimapower.png') }}" alt="">
                     </a>
-                    <p>Login con tu cuenta TuLadoVIP.CL</p>
+                    <p>Login con tu cuenta ClimaPower.CL</p>
                 </div>
 
                 @if (session('status'))

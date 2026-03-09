@@ -107,7 +107,7 @@
             <div class="login-form">
                 <div class="login-header">
                     <img width="150" height="20" src="{{ url('img/logoclimapower.png') }}" alt="">
-                    <p>Registro con tu cuenta TuLadoVIP.CL</p>
+                    <p>Registro con tu cuenta ClimaPower.CL</p>
                 </div>
 
                 @if (session('status'))
@@ -164,7 +164,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="1" name="terminos_y_condiciones" id="terminos_y_condiciones">
                             <label class="form-check-label" for="terminos_y_condiciones">
-                                He leído y estoy de acuerdo con la <a href="{{ url('politicas_calidad') }}" target="_blank">Política de privacidad</a> y <a href="{{ url('terminosycondiciones') }}" target="_blank">Términos y Condiciones</a>  del solicitante de TuLadoVIP.CL.
+                                He leído y estoy de acuerdo con la <a href="{{ url('politicas_calidad') }}" target="_blank">Política de privacidad</a> y <a href="{{ url('terminosycondiciones') }}" target="_blank">Términos y Condiciones</a>  del solicitante de ClimaPower.CL.
                             </label>
                         </div>
                     </div>

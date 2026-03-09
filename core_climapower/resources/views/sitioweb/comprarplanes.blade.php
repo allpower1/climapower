@@ -54,12 +54,12 @@
                         <h6 style="margin: 5px;padding:0px;">Bienvenida(o) {{ Auth::user()->name }} {{ Auth::user()->last_name }}</h6>
                     </div>
                     <div class="col-5">
-                        <a href="https://tuladovip.cl" target="_blank">
+                        <a href="{{ url('/') }}" target="_blank">
                             <input type="button" class="theme-btn my-1" style="padding:.25rem .5rem;font-size: .71094rem;" value="Comprar Plan">
                         </a>
                     </div>
                     <div class="col-12">
-                        <p>Al derivar a www.TuLadoVIP.cl verán precios, y opciones anuales, mensuales y oferta.</p>
+                        <p>Al derivar a {{ url('/') }} verán precios, y opciones anuales, mensuales y oferta.</p>
                         <br>
                     </div>
                 </div>

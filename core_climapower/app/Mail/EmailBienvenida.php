@@ -30,6 +30,6 @@ class EmailBienvenida extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.bienvenida')->subject('Bienvenida(o) a la WEB TuLadoVIP.CL');
+        return $this->markdown('emails.bienvenida')->subject('Bienvenida(o) a la WEB ClimaPower.CL');
     }
 }

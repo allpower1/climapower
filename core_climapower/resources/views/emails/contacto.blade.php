@@ -1,6 +1,6 @@
 @component('mail::message')
 # Estimados(as)
-Se ha generado un contacto desde el sitio web TuLadoVIP.CL con la siguiente información:
+Se ha generado un contacto desde el sitio web ClimaPower.CL con la siguiente información:
 <br><br>
 Nombre Completo: {{ $demo->nombre_completo }}
 <br>

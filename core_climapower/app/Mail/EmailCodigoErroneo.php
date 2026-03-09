@@ -30,6 +30,6 @@ class EmailCodigoErroneo extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.codigoerroneoplan')->subject('Código activación erróneo WEB TuLadoVIP.CL');
+        return $this->markdown('emails.codigoerroneoplan')->subject('Código activación erróneo WEB ClimaPower.CL');
     }
 }

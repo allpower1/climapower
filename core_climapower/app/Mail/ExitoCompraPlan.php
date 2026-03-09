@@ -30,6 +30,6 @@ class ExitoCompraPlan extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.compraexitosaplan')->subject('Compra exitosa plan WEB TuLadoVIP.CL');
+        return $this->markdown('emails.compraexitosaplan')->subject('Compra exitosa plan WEB ClimaPower.CL');
     }
 }
