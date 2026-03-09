@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminNuestrasEstrategiasController;
 use App\Http\Controllers\AdminNuestroEquipoController;
 use App\Http\Controllers\AdminNuestrosProyectosController;
 use App\Http\Controllers\AdminPreguntasFrecuentesController;
+use App\Http\Controllers\AdminServiciosController;
 use App\Http\Controllers\AdminSitioWebController;
 use App\Http\Controllers\AdminSliderHomeController;
 use App\Http\Controllers\AdminTestimoniosController;
@@ -182,6 +183,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('users',UsersController::class);
     Route::resource('preguntasfrecuentes',AdminPreguntasFrecuentesController::class);
     Route::resource('avisolegal',AdminAvisoLegalController::class);
+    Route::resource('servicios',AdminServiciosController::class);
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
     Route::resource('experiencias',AdminExperienciasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
