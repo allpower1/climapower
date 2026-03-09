@@ -198,7 +198,7 @@
 									</span>
 									<div class="step-content">
 										<h4 class="mb-3">{{ $estrategia->titulo }}</h4>
-										<p>{{ $estrategia->descripcion }}</p>
+										<p>{!! $estrategia->descripcion !!}</p>
 									</div>
 								</div>
 							</div>
