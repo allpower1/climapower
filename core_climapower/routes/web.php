@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAcercaNosotrosController;
+use App\Http\Controllers\AdminAvisoLegalController;
 use App\Http\Controllers\AdminExperienciasController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminNuestrasEstrategiasController;
@@ -180,6 +181,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('roles',RolesController::class);
     Route::resource('users',UsersController::class);
     Route::resource('preguntasfrecuentes',AdminPreguntasFrecuentesController::class);
+    Route::resource('avisolegal',AdminAvisoLegalController::class);
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
     Route::resource('experiencias',AdminExperienciasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
