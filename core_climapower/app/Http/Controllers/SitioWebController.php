@@ -16,6 +16,7 @@ use App\Mail\TestimonioWeb;
 use App\Models\AdminAcercaNosotros;
 use App\Models\AdminContactoOtros;
 use App\Models\AdminSitioWeb;
+use App\Models\AvisoLegal;
 use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
@@ -353,12 +354,9 @@ class SitioWebController extends Controller
     public function AdminAvisoLegal()
     {
         $datasitio = AdminSitioWeb::where('id',19)->first();
+        $listavisoslegales = AvisoLegal::where('estado',1)->get();
 
-        if($datasitio->titulo == '' || $datasitio->titulo == null){
-            return abort(404);
-        }
-
-        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+        return view('site_aviso_legal', compact('datasitio','listavisoslegales'));
     }
 
     public function AdminTiendaElectronica()
