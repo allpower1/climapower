@@ -21,12 +21,12 @@
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li>
                                             <a class="nav-link {{ ($request->segment(1) == '')?'active':'' }}" href="{{ url('/') }}">
-                                                Home
+                                                Inicio
                                             </a>
                                         </li>
                                         <li>
                                             <a class="nav-link {{ ($request->segment(1) == 'acerca_nosotros')?'active':'' }}" href="{{ url('acerca_nosotros') }}">
-                                                Acerca Nosotros
+                                                Empresa
                                             </a>
                                         </li>
                                         <li>
@@ -36,7 +36,7 @@
                                         </li>
                                         <li>
                                             <a class="nav-link {{ ($request->segment(1) == 'proyectos')?'active':'' }}" href="{{ url('proyectos') }}">
-                                                Proyectos
+                                                Portafolio
                                             </a>
                                         </li>
                                         <li>
@@ -46,7 +46,12 @@
                                         </li>
                                         <li>
                                             <a class="nav-link {{ ($request->segment(1) == 'nuestro_equipo')?'active':'' }}" href="{{ url('nuestro_equipo') }}">
-                                                Nuestro Equipo
+                                                Equipo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link " href="https://shop.climapower.cl/" target="_blank">
+                                                Tienda
                                             </a>
                                         </li>
                                         <li>
