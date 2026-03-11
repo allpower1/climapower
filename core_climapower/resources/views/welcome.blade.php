@@ -124,7 +124,7 @@
 								<div class="counter margin-style-2 custom-sm-counter-style">
 									<img class="counter-icon" src="{{ url('img/demos/business-consulting/icons/icon-4.png') }}" alt />
 									<strong class="text-color-primary custom-primary-font" data-to="{{$datasitio->consultores_profesionales}}" data-append="+">0</strong>
-									<label>Consultares Profesionales</label>
+									<label>Consultores Profesionales</label>
 								</div>
 							</div>
 						</div>
@@ -169,7 +169,7 @@
 				@endforelse
 			@endif
 		</div>
-		@if(count($listexperiencias) > 6)
+		@if(count($listexperiencias) > 0)
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-3" href="{{ url('experiencias') }}" title="View All">Ver Todos</a>
