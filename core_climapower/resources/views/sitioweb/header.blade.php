@@ -36,7 +36,7 @@
                                         </li>
                                         <li>
                                             <a class="nav-link {{ ($request->segment(1) == 'proyectos')?'active':'' }}" href="{{ url('proyectos') }}">
-                                                Portafolio
+                                                Proyectos
                                             </a>
                                         </li>
                                         <li>
