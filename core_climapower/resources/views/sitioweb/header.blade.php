@@ -40,13 +40,13 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link {{ ($request->segment(1) == 'proyectos')?'active':'' }}" href="{{ url('proyectos') }}">
-                                                Proyectos
+                                            <a class="nav-link {{ ($request->segment(1) == 'servicios')?'active':'' }}" href="{{ url('servicios') }}">
+                                                Servicios
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link {{ ($request->segment(1) == 'testimonios')?'active':'' }}" href="{{ url('testimonios') }}">
-                                                Testimonios
+                                            <a class="nav-link {{ ($request->segment(1) == 'proyectos')?'active':'' }}" href="{{ url('proyectos') }}">
+                                                Proyectos
                                             </a>
                                         </li>
                                         <li>
