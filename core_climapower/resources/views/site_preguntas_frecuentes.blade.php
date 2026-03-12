@@ -24,7 +24,7 @@
                 {!! $datasitio->datatxt !!}
             </p>
             <hr class="solid my-5">
-            <div class="toggle toggle-primary m-0" data-plugin-toggle>
+            <div class="toggle toggle-primary m-0" data-plugin-toggle data-plugin-options='{"isAccordion": true}'>
                 @if($listpreguntasfrecuentes)
                     @forelse ($listpreguntasfrecuentes as $indexpreg => $pregunta)
                         <section class="toggle @if($indexpreg == 0) active @endif">
