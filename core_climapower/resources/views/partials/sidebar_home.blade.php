@@ -97,7 +97,7 @@
                         <!--end:Menu sub-->
                     </div>
                     <!--end:Menu item plataforma web-->
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'areas' || $request->segment(2) == 'nuestroequipo' || $request->segment(2) == 'acercanosotros' || $request->segment(2) == 'sliderhome' || $request->segment(2) == 'testimonios' || $request->segment(2) == 'nuestros_proyectos' || $request->segment(2) == 'adminsitioweb' || $request->segment(2) == 'avisolegal' || $request->segment(2) == 'servicios')?'show':'' }}">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ ($request->segment(2) == 'nuestrasestrategias' || $request->segment(2) == 'preguntasfrecuentes' || $request->segment(2) == 'areas' || $request->segment(2) == 'nuestroequipo' || $request->segment(2) == 'acercanosotros' || $request->segment(2) == 'sliderhome' || $request->segment(2) == 'testimonios' || $request->segment(2) == 'nuestros_proyectos' || $request->segment(2) == 'adminsitioweb' || $request->segment(2) == 'avisolegal' || $request->segment(2) == 'servicios' || $request->segment(2) == 'nuestrospartners')?'show':'' }}">
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
@@ -283,6 +283,22 @@
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title">Admin Sitios Footer</span>
+                                </a>
+                                <!--end:Menu link-->
+                            </div>
+                            <!--end:Menu item-->
+                        </div>
+                        <!--end:Menu sub-->
+                        <!--begin:Menu sub nuestros partners -->
+                        <div class="menu-sub menu-sub-accordion">
+                            <!--begin:Menu item-->
+                            <div class="menu-item">
+                                <!--begin:Menu link-->
+                                <a class="menu-link {{ ($request->segment(1) == 'admin' and $request->segment(2) == 'nuestrospartners')?'active':'' }}" href="{{ url('admin/nuestrospartners') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Nuestros Partners</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>

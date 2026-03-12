@@ -83,6 +83,12 @@ return [
             'visibility' => 'private',
         ],
 
+        'adjuntopartners' => [
+            'driver'     => 'local',
+            'root'       => storage_path('/respaldos/adjuntopartners'),
+            'visibility' => 'private',
+        ],
+
         'adjuntoacercanosotros' => [
             'driver'     => 'local',
             'root'       => storage_path('/respaldos/adjuntoacercanosotros'),

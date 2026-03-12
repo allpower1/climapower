@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminAreasController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminNuestrasEstrategiasController;
 use App\Http\Controllers\AdminNuestroEquipoController;
+use App\Http\Controllers\AdminNuestrosPartnersController;
 use App\Http\Controllers\AdminNuestrosProyectosController;
 use App\Http\Controllers\AdminPreguntasFrecuentesController;
 use App\Http\Controllers\AdminServiciosController;
@@ -176,6 +177,9 @@ Route::get('proyecto/{id}',[SitioWebController::class,'detalleproyecto']);
 Route::get('proyectos',[SitioWebController::class,'listadoproyectos']);
 Route::get('fileproyecto/{path}', [FilesRespaldosController::class,'adjuntoproyecto']);
 
+//nuestros partners
+Route::get('filepartner/{path}', [FilesRespaldosController::class,'adjuntopartners']);
+
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], function () {
     Route::get('home',[HomeController::class,'index']);
     Route::resource('permissions',PermissionsController::class);
@@ -187,6 +191,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
     Route::resource('areas',AdminAreasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
+    Route::resource('nuestrospartners',AdminNuestrosPartnersController::class);
     Route::resource('acercanosotros',AdminAcercaNosotrosController::class);
     Route::resource('sliderhome',AdminSliderHomeController::class);
     Route::resource('nuestros_proyectos',AdminNuestrosProyectosController::class);
