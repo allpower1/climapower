@@ -281,6 +281,13 @@
 			</div>
 		</div>
 	@endif
+	@if(count($listproyectos) > 0)
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-3" href="{{ url('proyectos') }}" title="View All">Ver Todos</a>
+			</div>
+		</div>
+	@endif
 </section>
 
 <!-- seccion testimonios -->
@@ -338,6 +345,9 @@
 		<div class="row text-center mt-5">
 			<div class="col">
 				<button type="button" class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase" data-bs-toggle="modal" data-bs-target="#modalIngresarTestimonio">Ingresar tu testimonio</button>
+				@if(count($listtestimonios) > 0)
+					<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase" href="{{ url('testimonios') }}" title="View All">Ver Todos</a>
+				@endif
 			</div>
 		</div>
 	</div>
