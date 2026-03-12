@@ -32,16 +32,16 @@
                     </div>
                     <div class="col-6">
                         <h5 class="text-6 text-transform-none font-weight-semibold text-color-light mb-4">LINK</h5>
-                        <p class="mb-1"><a href="{{ url('tienda_electronica') }}" class="text-4 link-hover-style-1">Tienda Electrónica</a></p>
+                        <p class="mb-1"><a href="https://shop.climapower.cl/" class="text-4 link-hover-style-1">Tienda Electrónica</a></p>
                         <p class="mb-1"><a href="{{ url('preguntas_frecuentes') }}" class="text-4 link-hover-style-1">Preguntas Frecuentes</a></p>
                         <p class="mb-1"><a href="{{ url('descargas_pdf') }}" class="text-4 link-hover-style-1">Descargas (PDF)</a></p>
                         <p class="mb-1"><a href="{{ url('normativas') }}" class="text-4 link-hover-style-1">Normativas</a></p>
                         <p class="mb-1"><a href="{{ url('partners') }}" class="text-4 link-hover-style-1">Partners</a></p>
                         <p class="mb-1"><a href="{{ url('soporte') }}" class="text-4 link-hover-style-1">Soporte</a></p>
-                        <p class="mb-1"><a href="{{ url('reclamos') }}" class="text-4 link-hover-style-1">Reclamos</a></p>
+                        <p class="mb-1"><a href="{{ url('contacto') }}" class="text-4 link-hover-style-1">Reclamos</a></p>
                         <p class="mb-1"><a href="{{ url('oferta_trabajo') }}" class="text-4 link-hover-style-1">Oferta de Trabajo</a></p>
                         <p class="mb-1"><a href="{{ url('trabaja_con_nosotros') }}" class="text-4 link-hover-style-1">Trabaja con Nosotros</a></p>
-                        <p class="mb-1"><a href="{{ url('site_grupochrcl') }}" class="text-4 link-hover-style-1">Grupochr.cl</a></p>
+                        <p class="mb-1"><a href="https://grupochr.cl/" class="text-4 link-hover-style-1">Grupochr.cl</a></p>
                     </div>
                 </div>
             </div>
