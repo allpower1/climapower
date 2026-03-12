@@ -26,7 +26,7 @@
                                     @endif
                                     @if($datossitio->email)
                                     <li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
-                                        <a href="mailto:{{$datossitio->email}}"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> <span class="__cf_email__" data-cfemail="{{$datossitio->email}}">{{$datossitio->email}}</span></a>
+                                        <a href="mailto:{{$datossitio->email}}"><i class="far fa-envelope text-4 text-color-primary" style="top: 1px;"></i> {{$datossitio->email}}</a>
                                     </li>
                                     @endif
                                 </ul>
