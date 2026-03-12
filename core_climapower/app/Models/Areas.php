@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Experiencias extends Model
+class Areas extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'experiencias';
+    protected $table = 'areas';
 
 }

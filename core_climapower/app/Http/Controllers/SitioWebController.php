@@ -16,8 +16,8 @@ use App\Mail\TestimonioWeb;
 use App\Models\AdminAcercaNosotros;
 use App\Models\AdminContactoOtros;
 use App\Models\AdminSitioWeb;
+use App\Models\Areas;
 use App\Models\AvisoLegal;
-use App\Models\Experiencias;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
 use App\Models\NuestrosProyectos;
@@ -41,7 +41,7 @@ class SitioWebController extends Controller
         $datasitio = AdminContactoOtros::where('id',1)->first();
         $listpreguntasfrecuentes = PreguntasFrecuentes::where('estado',1)->get();
         $listnuestrasestrategias = NuestrasEstrategias::where('estado',1)->get();
-        $listexperiencias = Experiencias::where('estado',1)->limit(6)->get();
+        $listareas = Areas::where('estado',1)->limit(6)->get();
         $listnuestroequipo = NuestroEquipo::where('estado',1)->get();
         $dataacercanosotros = AdminAcercaNosotros::where('id',1)->first();
         $sliderhome = SliderHome::where('estado',1)->get();
@@ -61,33 +61,33 @@ class SitioWebController extends Controller
             }
         }
 
-        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listexperiencias','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter','listtestimonios','listproyectos'));
+        return view('welcome',compact('datasitio','listpreguntasfrecuentes','listnuestrasestrategias','listareas','listnuestroequipo','dataacercanosotros','sliderhome','fondofooter','listtestimonios','listproyectos'));
     }
 
-    public function listadoexperiencias()
+    public function listadoarea()
     {
-        $listexperiencias = Experiencias::where('estado',1)->get();
+        $listareas = Areas::where('estado',1)->get();
 
-        return view('site_listado_experiencias', compact('listexperiencias'));
+        return view('site_listado_areas', compact('listareas'));
     }
 
-    public function detalleexperiencia($id)
+    public function detallearea($id)
     {
-        $experiencia = Experiencias::where('id',$id)->first();
+        $area = Areas::where('id',$id)->first();
 
-        if(!$experiencia){
+        if(!$area){
             return abort(404);
         }
 
-        if($experiencia->titulo == '' || $experiencia->titulo == null){
+        if($area->titulo == '' || $area->titulo == null){
             return abort(404);
         }
 
-        if($experiencia->subtitulo == '' || $experiencia->subtitulo == null){
+        if($area->subtitulo == '' || $area->subtitulo == null){
             return abort(404);
         }
 
-        return view('site_detalle_experiencia', compact('experiencia'));
+        return view('site_detalle_area', compact('area'));
     }
 
     //nuestro equipo

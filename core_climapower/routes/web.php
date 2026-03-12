@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AdminAcercaNosotrosController;
 use App\Http\Controllers\AdminAvisoLegalController;
-use App\Http\Controllers\AdminExperienciasController;
+use App\Http\Controllers\AdminAreasController;
 use App\Http\Controllers\AdminNewsletterController;
 use App\Http\Controllers\AdminNuestrasEstrategiasController;
 use App\Http\Controllers\AdminNuestroEquipoController;
@@ -147,10 +147,10 @@ Route::patch('guardar_carnet_posterior',[ChangePasswordController::class,'guarda
 
 Route::post('actualizar_user_cliente',[UsersController::class,'updateUserCliente'])->name('admin.users.actualizar_user_cliente');
 
-//experiencias
-Route::get('experiencia/{id}',[SitioWebController::class,'detalleexperiencia']);
-Route::get('experiencias',[SitioWebController::class,'listadoexperiencias']);
-Route::get('fileexperiencia/{path}', [FilesRespaldosController::class,'adjuntoexperiencia']);
+//areas
+Route::get('area/{id}',[SitioWebController::class,'detallearea']);
+Route::get('areas',[SitioWebController::class,'listadoarea']);
+Route::get('filearea/{path}', [FilesRespaldosController::class,'adjuntoarea']);
 
 //nuestro equipo
 Route::get('equipo/{id}',[SitioWebController::class,'detalleequipo']);
@@ -185,7 +185,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin','as' => 'admin.'], f
     Route::resource('avisolegal',AdminAvisoLegalController::class);
     Route::resource('servicios',AdminServiciosController::class);
     Route::resource('nuestrasestrategias',AdminNuestrasEstrategiasController::class);
-    Route::resource('experiencias',AdminExperienciasController::class);
+    Route::resource('areas',AdminAreasController::class);
     Route::resource('nuestroequipo',AdminNuestroEquipoController::class);
     Route::resource('acercanosotros',AdminAcercaNosotrosController::class);
     Route::resource('sliderhome',AdminSliderHomeController::class);

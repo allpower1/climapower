@@ -3,7 +3,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreExperienciasRequest extends FormRequest
+class StoreAreasRequest extends FormRequest
 {
     /**
      * Determine si el usuario está autorizado para hacer esta solicitud.

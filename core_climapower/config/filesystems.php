@@ -71,9 +71,9 @@ return [
             'visibility' => 'private',
         ],
 
-        'adjuntoexperiencia' => [
+        'adjuntoarea' => [
             'driver'     => 'local',
-            'root'       => storage_path('/respaldos/adjuntoexperiencia'),
+            'root'       => storage_path('/respaldos/adjuntoarea'),
             'visibility' => 'private',
         ],
 

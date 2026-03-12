@@ -136,43 +136,43 @@
 	</div>
 </section>
 
-<!-- seccion experiencias -->
+<!-- seccion areas -->
 <section class="section-secondary custom-section-padding">
 	<div class="container">
 		<div class="row mb-4">
 			<div class="col">
-				<h2 class="font-weight-bold text-color-dark mb-3">- Experiencias</h2>
+				<h2 class="font-weight-bold text-color-dark mb-3">- Áreas</h2>
 			</div>
 		</div>
 		<div class="row">
-			@if($listexperiencias)
-				@forelse ($listexperiencias as $indexeexp => $experiencia)
+			@if($listareas)
+				@forelse ($listareas as $indexarea => $area)
 					<div class="col-lg-4">
-						<a href="{{ url('experiencia') }}/{{ $experiencia->id }}" class="text-decoration-none appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+						<a href="{{ url('area') }}/{{ $area->id }}" class="text-decoration-none appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
 							<div class="feature-box custom-feature-box feature-box-style-2">
 								<div class="feature-box-icon">
-									@if($experiencia->adjunto)
-										<img src="{{ url('fileexperiencia/'.$experiencia->adjunto) }}" alt="">
+									@if($area->adjunto)
+										<img src="{{ url('filearea/'.$area->adjunto) }}" alt="">
 									@else
 										<img src="{{ url('img/demos/business-consulting/expertise/expertise-1.jpg') }}" alt="">
 									@endif
 								</div>
 								<div class="feature-box-info ms-3">
-									<h4 class="font-weight-normal text-5">{{ $experiencia->titulo }}</h4>
-									<p class="text-2">{{ $experiencia->subtitulo }}</p>
+									<h4 class="font-weight-normal text-5">{{ $area->titulo }}</h4>
+									<p class="text-2">{{ $area->subtitulo }}</p>
 								</div>
 							</div>
 						</a>
 					</div>
 				@empty
-					<p>No existen registros de experiencias.</p>
+					<p>No existen registros de áreas.</p>
 				@endforelse
 			@endif
 		</div>
-		@if(count($listexperiencias) > 0)
+		@if(count($listareas) > 0)
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-3" href="{{ url('experiencias') }}" title="View All">Ver Todos</a>
+				<a class="btn btn-outline custom-border-width btn-primary custom-border-radius font-weight-semibold text-uppercase mb-3" href="{{ url('areas') }}" title="View All">Ver Todas</a>
 			</div>
 		</div>
 		@endif
