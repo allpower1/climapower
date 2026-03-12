@@ -47,7 +47,7 @@ class AdminNuestrosPartnersController extends Controller
 
             $manager = new ImageManager(['driver' => 'gd']);
             $image = $manager->make($file);
-            $image->fit(600, 600);
+            $image->fit(800, 800);
             $image->save($ruta.$filename);
 
             $partners = new NuestrosPartners;
@@ -101,7 +101,7 @@ class AdminNuestrosPartnersController extends Controller
 
             $manager = new ImageManager(['driver' => 'gd']);
             $image = $manager->make($file);
-            $image->fit(600, 600);
+            $image->fit(800, 800);
             $image->save($ruta.$filename);
 
             $partners->adjunto = $filename;

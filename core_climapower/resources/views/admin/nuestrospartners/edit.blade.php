@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="adjuntopartner" class="col-sm-2 control-label">Imagen (600x600)*</label>
+                            <label for="adjuntopartner" class="col-sm-2 control-label">Imagen (800x800)*</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" name="adjuntopartner" id="adjuntopartner" style="margin-top: 10px;" accept="image/png,image/jpg,image/jpeg">
                                 <p class="help-block"></p>
