@@ -20,6 +20,7 @@ use App\Models\Areas;
 use App\Models\AvisoLegal;
 use App\Models\NuestrasEstrategias;
 use App\Models\NuestroEquipo;
+use App\Models\NuestrosPartners;
 use App\Models\NuestrosProyectos;
 use App\Models\PreguntasFrecuentes;
 use App\Models\Servicios;
@@ -401,12 +402,9 @@ class SitioWebController extends Controller
     public function AdminPartners()
     {
         $datasitio = AdminSitioWeb::where('id',24)->first();
+        $listpartners = NuestrosPartners::where('estado',1)->get();
 
-        if($datasitio->titulo == '' || $datasitio->titulo == null){
-            return abort(404);
-        }
-
-        return view('sitio_new_footer_autoadministrable', compact('datasitio'));
+        return view('site_nuestros_partners', compact('datasitio','listpartners'));
     }
 
     public function AdminSoporte()

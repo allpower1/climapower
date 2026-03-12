@@ -30,6 +30,11 @@
                                             </a>
                                         </li>
                                         <li>
+                                            <a class="nav-link {{ ($request->segment(1) == 'partners')?'active':'' }}" href="{{ url('partners') }}">
+                                                Partners
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a class="nav-link {{ ($request->segment(1) == 'areas')?'active':'' }}" href="{{ url('areas') }}">
                                                 Áreas
                                             </a>
